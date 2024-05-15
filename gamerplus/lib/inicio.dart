@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'menu.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -45,6 +46,15 @@ class _MyHomePageState extends State<MyHomePage> {
               'Bienvenido a Gamerplus',
               style: TextStyle(fontFamily: 'Shogie', fontSize: 30),
             ),
+            //boton para entrar al coso
+            ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const Menu())); //ir a Menu
+            },
+            child: const Text("vamos")),
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
