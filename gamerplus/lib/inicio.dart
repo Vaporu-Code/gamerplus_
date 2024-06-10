@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
             
             Text(
               'Bienvenido a Gamerplus',
-              style: TextStyle(fontFamily: 'Shogie', fontSize: 50),
+              style: TextStyle(fontFamily: 'Shogie', fontSize: 30),
             ),
             SizedBox(height: 20),
 
@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
               ),
-              child: const Text('vamos allá', style: TextStyle(fontFamily: 'Roboto', fontSize: 20)),
+              child: const Text('vamos allá', style: TextStyle(fontFamily: 'Shogie', fontSize: 20)),
             ),
           ],
         ),

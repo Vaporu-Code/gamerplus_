@@ -38,30 +38,47 @@ String pfp_user = "assets/pfp_default.svg";
                 
                 //nombre de usuario
                 Text(
-                  "Username",
+                  "Vaporuname",
                   style: TextStyle(fontFamily: "Shogie", fontSize: 30),
                 ),
 
                 SizedBox(height: 10), //Espacio
                 Text(
-                  "País: \n",
-                  style: TextStyle(fontFamily: "Roboto", fontSize: 20),
+                  "País: Chile (CL)\n",
+                  style: TextStyle(fontFamily: "Shogie", fontSize: 20),
                 ),
 
                 Text(
-                  "Sobre mí: \n",
-                  style: TextStyle(fontFamily: "Roboto", fontSize: 20),
+                  "Sobre mí: \nHola, aquí un poco de mi información\n",
+                  style: TextStyle(fontFamily: "Shogie", fontSize: 20),
                 ),
 
                 Text(
-                  "Mis redes: \n",
-                  style: TextStyle(fontFamily: "Roboto", fontSize: 20),
+                  "Mis redes: @vaporuname\n",
+                  style: TextStyle(fontFamily: "Shogie", fontSize: 20),
                 ),
 
                 Text(
-                  "Categoría favorita: \n",
-                  style: TextStyle(fontFamily: "Roboto", fontSize: 20),
+                  "Categoría favorita: any%\n",
+                  style: TextStyle(fontFamily: "Shogie", fontSize: 20),
                 ),
+
+                ElevatedButton(
+                  onPressed: null,
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                  ),
+                  child: const Text('editar', style: TextStyle(fontFamily: 'Shogie', fontSize: 20)),
+                ),
+                ElevatedButton(
+                  onPressed: null,
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                  ),
+                  child: const Text('buscar jugadores', style: TextStyle(fontFamily: 'Shogie', fontSize: 20)),
+                ),
+
+
               ],   
             ),
           ),
