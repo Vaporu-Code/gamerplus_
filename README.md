@@ -19,3 +19,5 @@ Requerimientos no funcionales:
 -la aplicación se ejecuta correctamente en un teléfono celular
 
 Link de video explicativo en Youtube:
+(copie y pegue el siguiente link en su navegador)
+https://www.youtube.com/watch?v=gIoe9ZDalJo
