@@ -8,11 +8,7 @@ class lista extends StatelessWidget{
   @override
   Widget build(BuildContext context){
 
-    List<Map<String, dynamic>> juegos = [
-      {"nombre": "Dark Souls Remastered", "categoria": "any%", "record": "00:33:24"},
-      {"nombre": "Dark Souls 3", "categoria": "any%", "record": "00:56:46"},
-      {"nombre": "Elden Ring", "categoria": "Glitchless", "record": "01:42:09"},
-    ];
+    
 
     return Scaffold(
       
@@ -23,39 +19,49 @@ class lista extends StatelessWidget{
         title: Text("Lista de Juegos"),
       ),
       
-      body: ListView.builder(
-        itemCount: juegos.length,
-        itemBuilder: (context, index){
+      body: Center(
+        child: ListView(
+          children: <Widget>[
 
-          return ListTile(
-            title: Center(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(juegos[index]["nombre"], style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                  Text("Categoría: ${juegos[index]["categoria"]}"),
-                  Text("Récord: ${juegos[index]["record"]}"),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const ejemplo())); //ir a estrategias
-                    },
-                    style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-                    ),
-                    child: const Text('ver', style: TextStyle(fontFamily: 'Shogie', fontSize: 20)),
-                  ),
-                ],
-                
+            //elementos
+            Container(
+              height: 50,
+              color: Color.fromARGB(1, 1, 1, 1),
+              child: const Center(
+                child: Text( 'Dark Souls Remastered',
+                style: TextStyle(fontFamily: "Shogie", fontSize: 25)),
               ),
-              
-              
             ),
-          );
 
-        },
+            Container(
+              height: 50,
+              color: Color.fromARGB(1, 1, 1, 1),
+              child: const Center(
+                child: Text( 'Dark Souls II: SOTFS',
+                style: TextStyle(fontFamily: "Shogie", fontSize: 25)),
+              ),
+            ),
+
+            Container(
+              height: 50,
+              color: Color.fromARGB(1, 1, 1, 1),
+              child: const Center(
+                child: Text( 'Dark Souls III',
+                style: TextStyle(fontFamily: "Shogie", fontSize: 25)),
+              ),
+            ),
+
+            Container(
+              height: 50,
+              color: Color.fromARGB(1, 1, 1, 1),
+              child: const Center(
+                child: Text( 'Elden Ring',
+                style: TextStyle(fontFamily: "Shogie", fontSize: 25)),
+              ),
+            ),
+
+          ],
+        ),
       ),
 
     );

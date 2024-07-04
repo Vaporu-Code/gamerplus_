@@ -17,6 +17,54 @@ class Menu extends StatelessWidget{
         title: Text("Menú principal"),
       ),
 
+      //drawer
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromARGB(1, 1, 1, 1),
+              ),
+              child: Text('Menú',
+                style: TextStyle(fontFamily: "Shogie", fontSize: 25)),
+            ),
+
+            //elementos
+            ListTile(
+              title: const Text('Perfil',
+                style: TextStyle(fontFamily: "Shogie", fontSize: 25)),
+              onTap: () {
+                Navigator.push(context, 
+                MaterialPageRoute(builder: (context) => const perfil()),
+                );
+              },
+            ),
+
+            ListTile(
+              title: const Text('Lista de juegos',
+                style: TextStyle(fontFamily: "Shogie", fontSize: 25)),
+              onTap: () {
+                Navigator.push(context, 
+                MaterialPageRoute(builder: (context) => const lista()),
+                );
+              },
+            ),
+
+            ListTile(
+              title: const Text('Info',
+                style: TextStyle(fontFamily: "Shogie", fontSize: 25)),
+              onTap: () {
+                Navigator.push(context, 
+                MaterialPageRoute(builder: (context) => const infoapp()),
+                );
+              },
+            ),
+
+          ],
+        ),
+      ),
+
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -24,46 +72,18 @@ class Menu extends StatelessWidget{
 
             Text(
               'Gamerplus, la aplicación para speedrunners',
-              style: TextStyle(fontFamily: 'Shogie', fontSize: 20),
+              style: TextStyle(fontFamily: 'Shogie', fontSize: 25),
+              textAlign: TextAlign.center,
             ),
             Text(
-              '¿Qué vamos a jugar hoy?',
-              style: TextStyle(fontFamily: 'Shogie', fontSize: 20),
+              'Rutinas por completar:',
+              style: TextStyle(fontFamily: 'Shogie', fontSize: 25),
+              textAlign: TextAlign.center,
             ),
 
             SizedBox(height: 20),
 
-            //perfil
-            ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const perfil())); //ir al perfil
-            },
-            child: const Text("Perfíl", style: TextStyle(fontFamily: "Shogie", fontSize: 20))),
-            SizedBox(height: 20),
-
-            //lista de juegos
-            ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const lista())); //ir a la lista
-            },
-            child: const Text("Lista de Juego", style: TextStyle(fontFamily: "Shogie", fontSize: 20))),
-            SizedBox(height: 20),
-
-            //info
-            ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const infoapp())); //ir a la info de la aplicacion
-            },
-            child: const Text("Info", style: TextStyle(fontFamily: "Shogie", fontSize: 20))),
+           
             
           ],
         )
