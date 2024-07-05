@@ -26,36 +26,9 @@ class lista extends StatelessWidget{
             //elementos
             Container(
               height: 50,
-              color: Color.fromARGB(1, 1, 1, 1),
+              color: Color.fromARGB(20, 1, 1, 1),
               child: const Center(
-                child: Text( 'Dark Souls Remastered',
-                style: TextStyle(fontFamily: "Shogie", fontSize: 25)),
-              ),
-            ),
-
-            Container(
-              height: 50,
-              color: Color.fromARGB(1, 1, 1, 1),
-              child: const Center(
-                child: Text( 'Dark Souls II: SOTFS',
-                style: TextStyle(fontFamily: "Shogie", fontSize: 25)),
-              ),
-            ),
-
-            Container(
-              height: 50,
-              color: Color.fromARGB(1, 1, 1, 1),
-              child: const Center(
-                child: Text( 'Dark Souls III',
-                style: TextStyle(fontFamily: "Shogie", fontSize: 25)),
-              ),
-            ),
-
-            Container(
-              height: 50,
-              color: Color.fromARGB(1, 1, 1, 1),
-              child: const Center(
-                child: Text( 'Elden Ring',
+                child: Text( 'juego',
                 style: TextStyle(fontFamily: "Shogie", fontSize: 25)),
               ),
             ),
