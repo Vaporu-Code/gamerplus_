@@ -2,7 +2,7 @@
     {
         "id": 1,
         "imagen": "imagen",
-        "nombre": "Dark Souls Remastered",
+        "nombre": "Dark Souls: Remastered",
         "anno": 2018,
         "genero": "Action RPG",
         "descripcion": "des",
@@ -13,7 +13,7 @@
     {
         "id": 2,
         "imagen": "imagen",
-        "nombre": "Dark Souls 2 Scholar of the First Sin",
+        "nombre": "Dark Souls II: Scholar of the First Sin",
         "anno": 2015,
         "genero": "Action RPG",
         "descripcion": "des",
@@ -24,7 +24,7 @@
     {
         "id": 3,
         "imagen": "imagen",
-        "nombre": "Dark Souls 3",
+        "nombre": "Dark Souls III",
         "anno": 2016,
         "genero": "Action RPG",
         "descripcion": "des",
