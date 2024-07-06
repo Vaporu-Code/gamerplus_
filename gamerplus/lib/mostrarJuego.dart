@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:gamerplus/juegoClase.dart'; 
+import 'package:gamerplus/juegoClase.dart';
+import 'package:gamerplus/mostrarEstrategia.dart'; 
 
 class MostrarJuego extends StatelessWidget {
   final int id;
@@ -53,6 +54,47 @@ class MostrarJuego extends StatelessWidget {
                   Text('Puntuación: ${juego.puntuacion}', style: TextStyle(fontSize: 20)),
                   SizedBox(height: 8),
                   Text('World Record: ${juego.worldRecord}', style: TextStyle(fontSize: 20)),
+                  SizedBox(height: 16),
+
+                  //rutinas
+                  ElevatedButton(
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MostrarEstrategia(rutinaId: 1, juegoId: id)
+                        ),
+                      );
+                    },
+                    child: Text('rutina 1'),
+                  ),
+
+                  SizedBox(height: 8),
+                  ElevatedButton(
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MostrarEstrategia(rutinaId: 2, juegoId: id)
+                        ),
+                      );
+                    },
+                    child: Text('rutina 1'),
+                  ),
+
+                  SizedBox(height: 8),
+                  ElevatedButton(
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MostrarEstrategia(rutinaId: 3, juegoId: id)
+                        ),
+                      );
+                    },
+                    child: Text('rutina 1'),
+                  ),
+
                 ],
               ),
             );
