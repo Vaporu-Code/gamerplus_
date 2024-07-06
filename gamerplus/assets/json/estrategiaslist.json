@@ -1,6 +1,8 @@
 [
     {
         "id": 1,
+        "juegoId": 1,
+        "nombre": "nombre",
         "dificultad": "facil",
         "completado": false,
         "descripcion": "lol",
@@ -8,6 +10,8 @@
     },
     {
         "id": 1,
+        "juegoId": 1,
+        "nombre": "nombre",
         "dificultad": "facil",
         "completado": false,
         "descripcion": "lol",
@@ -15,6 +19,92 @@
     },
     {
         "id": 1,
+        "juegoId": 1,
+        "nombre": "nombre",
+        "dificultad": "facil",
+        "completado": false,
+        "descripcion": "lol",
+        "imagen": "img"
+    },
+
+    {
+        "id": 1,
+        "juegoId": 1,
+        "nombre": "nombre",
+        "dificultad": "facil",
+        "completado": false,
+        "descripcion": "lol",
+        "imagen": "img"
+    },
+    {
+        "id": 1,
+        "juegoId": 1,
+        "nombre": "nombre",
+        "dificultad": "facil",
+        "completado": false,
+        "descripcion": "lol",
+        "imagen": "img"
+    },
+    {
+        "id": 1,
+        "juegoId": 1,
+        "nombre": "nombre",
+        "dificultad": "facil",
+        "completado": false,
+        "descripcion": "lol",
+        "imagen": "img"
+    },
+
+    {
+        "id": 1,
+        "juegoId": 1,
+        "nombre": "nombre",
+        "dificultad": "facil",
+        "completado": false,
+        "descripcion": "lol",
+        "imagen": "img"
+    },
+    {
+        "id": 1,
+        "juegoId": 1,
+        "nombre": "nombre",
+        "dificultad": "facil",
+        "completado": false,
+        "descripcion": "lol",
+        "imagen": "img"
+    },
+    {
+        "id": 1,
+        "juegoId": 1,
+        "nombre": "nombre",
+        "dificultad": "facil",
+        "completado": false,
+        "descripcion": "lol",
+        "imagen": "img"
+    },
+
+    {
+        "id": 1,
+        "juegoId": 1,
+        "nombre": "nombre",
+        "dificultad": "facil",
+        "completado": false,
+        "descripcion": "lol",
+        "imagen": "img"
+    },
+    {
+        "id": 1,
+        "juegoId": 1,
+        "nombre": "nombre",
+        "dificultad": "facil",
+        "completado": false,
+        "descripcion": "lol",
+        "imagen": "img"
+    },
+    {
+        "id": 1,
+        "juegoId": 1,
+        "nombre": "nombre",
         "dificultad": "facil",
         "completado": false,
         "descripcion": "lol",

@@ -2,34 +2,45 @@
     {
         "id": 1,
         "imagen": "imagen",
-        "nombre": "nombre",
+        "nombre": "Dark Souls Remastered",
         "anno": 2018,
-        "genero": "gen",
+        "genero": "Action RPG",
         "descripcion": "des",
         "link": "link",
-        "puntuacion": 2.8,
-        "worldRecord": "00:00:00"
+        "puntuacion": 8.9,
+        "worldRecord": "00:19:20"
     },
     {
-        "id": 1,
+        "id": 2,
         "imagen": "imagen",
-        "nombre": "nombre",
-        "anno": 2018,
-        "genero": "gen",
+        "nombre": "Dark Souls 2 Scholar of the First Sin",
+        "anno": 2015,
+        "genero": "Action RPG",
         "descripcion": "des",
         "link": "link",
-        "puntuacion": 2.8,
-        "worldRecord": "00:00:00"
+        "puntuacion": 7.6,
+        "worldRecord": "00:53:50 any%"
     },
     {
-        "id": 1,
+        "id": 3,
         "imagen": "imagen",
-        "nombre": "nombre",
-        "anno": 2018,
-        "genero": "gen",
+        "nombre": "Dark Souls 3",
+        "anno": 2016,
+        "genero": "Action RPG",
         "descripcion": "des",
         "link": "link",
-        "puntuacion": 2.8,
-        "worldRecord": "00:00:00"
+        "puntuacion": 9.1,
+        "worldRecord": "00:28:47 any%"
+    },
+    {
+        "id": 4,
+        "imagen": "imagen",
+        "nombre": "Elden Ring",
+        "anno": 2022,
+        "genero": "Action RPG",
+        "descripcion": "des",
+        "link": "link",
+        "puntuacion": 9.4,
+        "worldRecord": "00:19:30 any%"
     }
 ]
