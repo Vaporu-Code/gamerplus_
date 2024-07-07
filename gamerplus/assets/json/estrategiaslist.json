@@ -2,53 +2,28 @@
     {
         "id": 1,
         "juegoId": 1,
-        "nombre": "nombre",
+        "seleccionado": false,
+        "nombre": "strat 1 ds",
         "dificultad": "facil",
         "completado": false,
         "descripcion": "lol",
         "imagen": "img"
     },
     {
-        "id": 1,
+        "id": 2,
         "juegoId": 1,
-        "nombre": "nombre",
+        "seleccionado": false,
+        "nombre": "strat 2 ds",
         "dificultad": "facil",
         "completado": false,
         "descripcion": "lol",
         "imagen": "img"
     },
     {
-        "id": 1,
+        "id": 3,
         "juegoId": 1,
-        "nombre": "nombre",
-        "dificultad": "facil",
-        "completado": false,
-        "descripcion": "lol",
-        "imagen": "img"
-    },
-
-    {
-        "id": 1,
-        "juegoId": 1,
-        "nombre": "nombre",
-        "dificultad": "facil",
-        "completado": false,
-        "descripcion": "lol",
-        "imagen": "img"
-    },
-    {
-        "id": 1,
-        "juegoId": 1,
-        "nombre": "nombre",
-        "dificultad": "facil",
-        "completado": false,
-        "descripcion": "lol",
-        "imagen": "img"
-    },
-    {
-        "id": 1,
-        "juegoId": 1,
-        "nombre": "nombre",
+        "seleccionado": false,
+        "nombre": "strat 3 ds",
         "dificultad": "facil",
         "completado": false,
         "descripcion": "lol",
@@ -57,26 +32,29 @@
 
     {
         "id": 1,
-        "juegoId": 1,
-        "nombre": "nombre",
+        "juegoId": 2,
+        "seleccionado": false,
+        "nombre": "strat 1 ds2",
         "dificultad": "facil",
         "completado": false,
         "descripcion": "lol",
         "imagen": "img"
     },
     {
-        "id": 1,
-        "juegoId": 1,
-        "nombre": "nombre",
+        "id": 2,
+        "juegoId": 2,
+        "seleccionado": false,
+        "nombre": "strat 2 ds2",
         "dificultad": "facil",
         "completado": false,
         "descripcion": "lol",
         "imagen": "img"
     },
     {
-        "id": 1,
-        "juegoId": 1,
-        "nombre": "nombre",
+        "id": 3,
+        "juegoId": 2,
+        "seleccionado": false,
+        "nombre": "strat 3 ds2",
         "dificultad": "facil",
         "completado": false,
         "descripcion": "lol",
@@ -85,26 +63,60 @@
 
     {
         "id": 1,
-        "juegoId": 1,
-        "nombre": "nombre",
+        "juegoId": 3,
+        "seleccionado": false,
+        "nombre": "strat 1 ds3",
         "dificultad": "facil",
         "completado": false,
         "descripcion": "lol",
         "imagen": "img"
     },
     {
-        "id": 1,
-        "juegoId": 1,
-        "nombre": "nombre",
+        "id": 2,
+        "juegoId": 3,
+        "seleccionado": false,
+        "nombre": "strat 2 ds3",
         "dificultad": "facil",
         "completado": false,
         "descripcion": "lol",
         "imagen": "img"
     },
     {
+        "id": 3,
+        "juegoId": 3,
+        "seleccionado": false,
+        "nombre": "strat 3 ds3",
+        "dificultad": "facil",
+        "completado": false,
+        "descripcion": "lol",
+        "imagen": "img"
+    },
+
+    {
         "id": 1,
-        "juegoId": 1,
-        "nombre": "nombre",
+        "juegoId": 4,
+        "seleccionado": false,
+        "nombre": "strat 1 er",
+        "dificultad": "facil",
+        "completado": false,
+        "descripcion": "lol",
+        "imagen": "img"
+    },
+    {
+        "id": 2,
+        "juegoId": 4,
+        "seleccionado": false,
+        "nombre": "strat 2 er",
+        "dificultad": "facil",
+        "completado": false,
+        "descripcion": "lol",
+        "imagen": "img"
+    },
+    {
+        "id": 3,
+        "juegoId": 4,
+        "seleccionado": false,
+        "nombre": "strat 3 er",
         "dificultad": "facil",
         "completado": false,
         "descripcion": "lol",

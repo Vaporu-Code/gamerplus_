@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 class Estrategias {
   int id;
   int juegoId;
+  bool seleccionado;
   String nombre;
   String dificultad;
   bool completado;
@@ -16,6 +17,7 @@ class Estrategias {
   Estrategias({
     required this.id,
     required this.juegoId,
+    required this.seleccionado,
     required this.nombre,
     required this.dificultad,
     required this.completado,
@@ -27,6 +29,7 @@ class Estrategias {
     return Estrategias(
       id: json['id'],
       juegoId: json['juegoId'],
+      seleccionado: json['seleccionado'],
       nombre: json['nombre'],
       dificultad: json['dificultad'],
       completado: json['completado'],
