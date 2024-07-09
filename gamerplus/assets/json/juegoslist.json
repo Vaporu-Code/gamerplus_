@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "imagen": "imagen",
+        "imagen": "assets/dsr.svg",
         "nombre": "Dark Souls: Remastered",
         "anno": 2018,
         "genero": "Action RPG",
@@ -12,7 +12,7 @@
     },
     {
         "id": 2,
-        "imagen": "imagen",
+        "imagen": "assets/ds2.svg",
         "nombre": "Dark Souls II: Scholar of the First Sin",
         "anno": 2015,
         "genero": "Action RPG",
@@ -23,7 +23,7 @@
     },
     {
         "id": 3,
-        "imagen": "imagen",
+        "imagen": "assets/ds3.svg",
         "nombre": "Dark Souls III",
         "anno": 2016,
         "genero": "Action RPG",
@@ -34,7 +34,7 @@
     },
     {
         "id": 4,
-        "imagen": "imagen",
+        "imagen": "assets/er.svg",
         "nombre": "Elden Ring",
         "anno": 2022,
         "genero": "Action RPG",

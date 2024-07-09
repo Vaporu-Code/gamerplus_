@@ -58,27 +58,6 @@ String pfp_user = "assets/pfp_default.svg";
                   style: TextStyle(fontFamily: "Shogie", fontSize: 20),
                 ),
 
-                Text(
-                  "Categoría favorita: any%\n",
-                  style: TextStyle(fontFamily: "Shogie", fontSize: 20),
-                ),
-
-                ElevatedButton(
-                  onPressed: null,
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-                  ),
-                  child: const Text('editar', style: TextStyle(fontFamily: 'Shogie', fontSize: 20)),
-                ),
-                ElevatedButton(
-                  onPressed: null,
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-                  ),
-                  child: const Text('buscar jugadores', style: TextStyle(fontFamily: 'Shogie', fontSize: 20)),
-                ),
-
-
               ],   
             ),
           ),
