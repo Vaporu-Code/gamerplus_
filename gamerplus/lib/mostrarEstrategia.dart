@@ -1,5 +1,8 @@
 import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 
 import 'estrategiaClase.dart';
 
@@ -16,6 +19,7 @@ class MostrarEstrategia extends StatefulWidget {
 class _MostrarEstrategiaState extends State<MostrarEstrategia> {
   late Future<Estrategias?> _futureEstrategia;
   Estrategias? _estrategia;
+  List<dynamic>? _jsonList;
 
   @override
   void initState() {
@@ -23,11 +27,26 @@ class _MostrarEstrategiaState extends State<MostrarEstrategia> {
     _futureEstrategia = cargarEstrategiaDesdeJson(context);
   }
 
+  Future<File> _getLocalFile() async {
+    final directory = await getApplicationDocumentsDirectory();
+    return File('${directory.path}/estrategiaslist.json');
+  }
+
+  Future<void> _copyAssetToLocal() async {
+    final file = await _getLocalFile();
+    if (!file.existsSync()) {
+      final data = await DefaultAssetBundle.of(context).loadString('assets/json/estrategiaslist.json');
+      await file.writeAsString(data);
+    }
+  }
+
   Future<Estrategias?> cargarEstrategiaDesdeJson(BuildContext context) async {
-    String jsonString = await DefaultAssetBundle.of(context).loadString('assets/json/estrategiaslist.json');
-    List<dynamic> jsonList = json.decode(jsonString);
+    await _copyAssetToLocal();
+    final file = await _getLocalFile();
+    String jsonString = await file.readAsString();
+    _jsonList = json.decode(jsonString);
     Estrategias? estrategia;
-    for (var json in jsonList) {
+    for (var json in _jsonList!) {
       if (json['id'] == widget.rutinaId && json['juegoId'] == widget.juegoId) {
         estrategia = Estrategias.fromJson(json);
         break;
@@ -36,10 +55,24 @@ class _MostrarEstrategiaState extends State<MostrarEstrategia> {
     return estrategia;
   }
 
+  Future<void> _guardarCambios() async {
+    final file = await _getLocalFile();
+    if (_jsonList != null && _estrategia != null) {
+      for (var json in _jsonList!) {
+        if (json['id'] == widget.rutinaId && json['juegoId'] == widget.juegoId) {
+          json['seleccionado'] = _estrategia!.seleccionado;
+          break;
+        }
+      }
+      await file.writeAsString(json.encode(_jsonList));
+    }
+  }
+
   void _cambiarSeleccionado() {
     setState(() {
       if (_estrategia != null) {
         _estrategia!.cambiarSeleccionado();
+        _guardarCambios();
       }
     });
     ScaffoldMessenger.of(context).showSnackBar(

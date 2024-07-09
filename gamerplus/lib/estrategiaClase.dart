@@ -1,12 +1,11 @@
-import 'dart:collection';
-import 'dart:ffi';
-import 'dart:ui';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 
 class Estrategias {
   int id;
   int juegoId;
+  String juegoNombre;
   bool seleccionado;
   String nombre;
   String dificultad;
@@ -17,6 +16,7 @@ class Estrategias {
   Estrategias({
     required this.id,
     required this.juegoId,
+    required this.juegoNombre,
     required this.seleccionado,
     required this.nombre,
     required this.dificultad,
@@ -27,19 +27,19 @@ class Estrategias {
 
   factory Estrategias.fromJson(Map<String, dynamic> json) {
     return Estrategias(
-      id: json['id'],
-      juegoId: json['juegoId'],
-      seleccionado: json['seleccionado'],
-      nombre: json['nombre'],
-      dificultad: json['dificultad'],
-      completado: json['completado'],
-      descripcion: json['descripcion'],
-      imagen: json['imagen'],
+      id: json['id'] ?? 0,
+      juegoId: json['juegoId'] ?? 0,
+      juegoNombre: json['juegoNombre'] ?? '',
+      seleccionado: json['seleccionado'] ?? false,
+      nombre: json['nombre'] ?? '',
+      dificultad: json['dificultad'] ?? '',
+      completado: json['completado'] ?? false,
+      descripcion: json['descripcion'] ?? '',
+      imagen: json['imagen'] ?? '',
     );
   }
 
-  void cambiarSeleccionado(){
-    seleccionado =!seleccionado;
+  void cambiarSeleccionado() {
+    seleccionado = !seleccionado;
   }
-
 }

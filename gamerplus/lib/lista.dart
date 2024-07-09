@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gamerplus/ejemplo.dart';
-import 'package:gamerplus/inicio%20copy.dart';
 
 import 'package:gamerplus/mostrarJuego.dart';
 

@@ -2,6 +2,7 @@
     {
         "id": 1,
         "juegoId": 1,
+        "juegoNombre": "Dark Souls: Remastered",
         "seleccionado": false,
         "nombre": "strat 1 ds",
         "dificultad": "facil",
@@ -12,6 +13,7 @@
     {
         "id": 2,
         "juegoId": 1,
+        "juegoNombre": "Dark Souls: Remastered",
         "seleccionado": false,
         "nombre": "strat 2 ds",
         "dificultad": "facil",
@@ -22,6 +24,7 @@
     {
         "id": 3,
         "juegoId": 1,
+        "juegoNombre": "Dark Souls: Remastered",
         "seleccionado": false,
         "nombre": "strat 3 ds",
         "dificultad": "facil",
@@ -29,10 +32,10 @@
         "descripcion": "lol",
         "imagen": "img"
     },
-
     {
         "id": 1,
         "juegoId": 2,
+        "juegoNombre": "Dark Souls II: Scholar of the First Sin",
         "seleccionado": false,
         "nombre": "strat 1 ds2",
         "dificultad": "facil",
@@ -43,6 +46,7 @@
     {
         "id": 2,
         "juegoId": 2,
+        "juegoNombre": "Dark Souls II: Scholar of the First Sin",
         "seleccionado": false,
         "nombre": "strat 2 ds2",
         "dificultad": "facil",
@@ -53,6 +57,7 @@
     {
         "id": 3,
         "juegoId": 2,
+        "juegoNombre": "Dark Souls II: Scholar of the First Sin",
         "seleccionado": false,
         "nombre": "strat 3 ds2",
         "dificultad": "facil",
@@ -60,10 +65,10 @@
         "descripcion": "lol",
         "imagen": "img"
     },
-
     {
         "id": 1,
         "juegoId": 3,
+        "juegoNombre": "Dark Souls III",
         "seleccionado": false,
         "nombre": "strat 1 ds3",
         "dificultad": "facil",
@@ -74,6 +79,7 @@
     {
         "id": 2,
         "juegoId": 3,
+        "juegoNombre": "Dark Souls III",
         "seleccionado": false,
         "nombre": "strat 2 ds3",
         "dificultad": "facil",
@@ -84,6 +90,7 @@
     {
         "id": 3,
         "juegoId": 3,
+        "juegoNombre": "Dark Souls III",
         "seleccionado": false,
         "nombre": "strat 3 ds3",
         "dificultad": "facil",
@@ -91,10 +98,10 @@
         "descripcion": "lol",
         "imagen": "img"
     },
-
     {
         "id": 1,
         "juegoId": 4,
+        "juegoNombre": "Elden Ring",
         "seleccionado": false,
         "nombre": "strat 1 er",
         "dificultad": "facil",
@@ -105,6 +112,7 @@
     {
         "id": 2,
         "juegoId": 4,
+        "juegoNombre": "Elden Ring",
         "seleccionado": false,
         "nombre": "strat 2 er",
         "dificultad": "facil",
@@ -115,6 +123,7 @@
     {
         "id": 3,
         "juegoId": 4,
+        "juegoNombre": "Elden Ring",
         "seleccionado": false,
         "nombre": "strat 3 er",
         "dificultad": "facil",
