@@ -28,7 +28,7 @@ class lista extends StatelessWidget {
               child: Container(
                 height: 100,
                 decoration: BoxDecoration(
-                  color: Color.fromRGBO(196, 216, 109, 0.507),
+                  color: Colors.lightBlue[100], // Color celeste pastel
                 ),
                 child: Center(
                   child: Text(
@@ -52,7 +52,7 @@ class lista extends StatelessWidget {
               child: Container(
                 height: 100,
                 decoration: BoxDecoration(
-                  color: Color.fromRGBO(196, 216, 109, 0.507),
+                  color: Colors.lightBlue[100], // Color celeste pastel
                 ),
                 child: Center(
                   child: Text(
@@ -78,7 +78,7 @@ class lista extends StatelessWidget {
               child: Container(
                 height: 100,
                 decoration: BoxDecoration(
-                  color: Color.fromRGBO(196, 216, 109, 0.507),
+                  color: Colors.lightBlue[100], // Color celeste pastel
                 ),
                 child: Center(
                   child: Text(
@@ -103,7 +103,7 @@ class lista extends StatelessWidget {
               child: Container(
                 height: 100,
                 decoration: BoxDecoration(
-                  color: Color.fromRGBO(196, 216, 109, 0.507),
+                  color: Colors.lightBlue[100], // Color celeste pastel
                 ),
                 child: Center(
                   child: Text(

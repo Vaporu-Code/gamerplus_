@@ -103,10 +103,12 @@ class _ListaEntrenamientoState extends State<ListaEntrenamiento> {
               );
             } else {
               List<dynamic> estrategiasSeleccionadas = snapshot.data!;
-              return Column(
-                children: [
-                  Expanded(
-                    child: ListView.builder(
+              return SingleChildScrollView(
+                child: Column(
+                  children: [
+                    ListView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
                       itemCount: estrategiasSeleccionadas.length,
                       itemBuilder: (context, index) {
                         var estrategia = estrategiasSeleccionadas[index];
@@ -114,7 +116,7 @@ class _ListaEntrenamientoState extends State<ListaEntrenamiento> {
                           children: [
                             SizedBox(height: 5), // Añadir SizedBox antes de cada elemento
                             Container(
-                              color: Color.fromRGBO(196, 216, 109, 0.507),
+                              color: Colors.lightBlue[100], // Color celeste pastel
                               child: ListTile(
                                 title: Text(
                                   estrategia['nombre'],
@@ -150,17 +152,25 @@ class _ListaEntrenamientoState extends State<ListaEntrenamiento> {
                         );
                       },
                     ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      _actualizarCompletados(false);
-                    },
-                    child: Text(
-                      'Marcar todos como no completados',
-                      style: TextStyle(fontFamily: 'Shogie'),
+                    ElevatedButton(
+                      onPressed: () {
+                        _actualizarCompletados(false);
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                          const Color.fromARGB(255, 180, 81, 197), // Color morado pastel
+                        ),
+                        foregroundColor: MaterialStateProperty.all<Color>(
+                          Colors.white, // Texto blanco
+                        ),
+                      ),
+                      child: Text(
+                        'Marcar todos como no completados',
+                        style: TextStyle(fontFamily: 'Shogie'),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               );
             }
           },

@@ -10,7 +10,8 @@ class MostrarEstrategia extends StatefulWidget {
   final int rutinaId;
   final int juegoId;
 
-  const MostrarEstrategia({Key? key, required this.rutinaId, required this.juegoId}) : super(key: key);
+  const MostrarEstrategia({Key? key, required this.rutinaId, required this.juegoId})
+      : super(key: key);
 
   @override
   _MostrarEstrategiaState createState() => _MostrarEstrategiaState();
@@ -35,7 +36,8 @@ class _MostrarEstrategiaState extends State<MostrarEstrategia> {
   Future<void> _copyAssetToLocal() async {
     final file = await _getLocalFile();
     if (!file.existsSync()) {
-      final data = await DefaultAssetBundle.of(context).loadString('assets/json/estrategiaslist.json');
+      final data =
+          await DefaultAssetBundle.of(context).loadString('assets/json/estrategiaslist.json');
       await file.writeAsString(data);
     }
   }
@@ -93,29 +95,44 @@ class _MostrarEstrategiaState extends State<MostrarEstrategia> {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}', style: TextStyle(fontFamily: 'Shogie')));
+            return Center(
+                child: Text('Error: ${snapshot.error}', style: TextStyle(fontFamily: 'Shogie')));
           } else if (!snapshot.hasData || snapshot.data == null) {
-            return Center(child: Text('No se encontró información para la rutina ${widget.rutinaId} del juego ${widget.juegoId}', style: TextStyle(fontFamily: 'Shogie')));
+            return Center(
+                child: Text('No se encontró información para la rutina ${widget.rutinaId} del juego ${widget.juegoId}',
+                    style: TextStyle(fontFamily: 'Shogie')));
           } else {
             _estrategia = snapshot.data!;
-            return Container(
-              color: Color.fromRGBO(196, 216, 109, 0.507),
-              child: Padding(
+            return SingleChildScrollView(
+              child: Container(
+                color: Color.fromRGBO(196, 216, 109, 0.507),
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ElevatedButton(
                       onPressed: _cambiarSeleccionado,
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                          const Color.fromARGB(255, 180, 81, 197), // Color morado pastel
+                        ),
+                        foregroundColor: MaterialStateProperty.all<Color>(
+                          Colors.white, // Texto blanco
+                        ),
+                      ),
                       child: Text('Seleccionar rutina', style: TextStyle(fontFamily: 'Shogie')),
                     ),
-                    Text('Seleccionado para entrenar: ${_estrategia!.seleccionado ? 'Sí' : 'No'}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
+                    Text('Seleccionado para entrenar: ${_estrategia!.seleccionado ? 'Sí' : 'No'}',
+                        style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
                     SizedBox(height: 8),
-                    Text('Nombre: ${_estrategia!.nombre}', style: TextStyle(fontSize: 24, fontFamily: 'Shogie')),
+                    Text('Nombre: ${_estrategia!.nombre}',
+                        style: TextStyle(fontSize: 24, fontFamily: 'Shogie')),
                     SizedBox(height: 8),
-                    Text('Dificultad: ${_estrategia!.dificultad}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
+                    Text('Dificultad: ${_estrategia!.dificultad}',
+                        style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
                     SizedBox(height: 8),
-                    Text('Descripción: ${_estrategia!.descripcion}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
+                    Text('Descripción: ${_estrategia!.descripcion}',
+                        style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
                     SizedBox(height: 8),
                   ],
                 ),

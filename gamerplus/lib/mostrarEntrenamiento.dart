@@ -117,15 +117,23 @@ class _MostrarEntrenamientoState extends State<MostrarEntrenamiento> {
             );
           } else {
             _estrategia = snapshot.data!;
-            return Container(
-              color: Color.fromRGBO(196, 216, 109, 0.507),
-              child: Padding(
+            return SingleChildScrollView(
+              child: Container(
+                color: Color.fromRGBO(196, 216, 109, 0.507),
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ElevatedButton(
                       onPressed: _cambiarCompletado,
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                          const Color.fromARGB(255, 180, 81, 197), // Color morado pastel
+                        ),
+                        foregroundColor: MaterialStateProperty.all<Color>(
+                          Colors.white, // Texto blanco
+                        ),
+                      ),
                       child: Text(
                         _estrategia!.completado
                             ? 'Marcar como Incompleto'

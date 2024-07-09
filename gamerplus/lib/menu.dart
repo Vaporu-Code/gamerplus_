@@ -133,11 +133,13 @@ class _MenuState extends State<Menu> {
           ],
         ),
       ),
-      body: Container(
-        color: Color.fromRGBO(196, 216, 109, 0.507), // Cambiar color de fondo aquí
-        child: Center(
+      body: SingleChildScrollView(
+        child: Container(
+          color: Color.fromRGBO(196, 216, 109, 0.507),
+          padding: EdgeInsets.all(20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 'Gamerplus, la aplicación para speedrunners',
@@ -165,11 +167,15 @@ class _MenuState extends State<Menu> {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return CircularProgressIndicator();
                   } else if (snapshot.hasError) {
-                    return Text('Error al cargar estrategias: ${snapshot.error}', style: TextStyle(fontFamily: 'Shogie', fontSize: 20));
+                    return Text(
+                      'Error al cargar estrategias: ${snapshot.error}',
+                      style: TextStyle(fontFamily: 'Shogie', fontSize: 20),
+                    );
                   } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
                     return Text(
-                        'No hay rutinas seleccionadas \n ve a la lista de juegos para revisar rutinas',
-                        style: TextStyle(fontFamily: 'Shogie', fontSize: 20)
+                      'No hay rutinas seleccionadas \n Ve a la lista de juegos para revisar rutinas',
+                      style: TextStyle(fontFamily: 'Shogie', fontSize: 20),
+                      textAlign: TextAlign.center,
                     );
                   } else {
                     List<dynamic> estrategias = snapshot.data!;
@@ -192,12 +198,56 @@ class _MenuState extends State<Menu> {
                           SizedBox(height: 20),
                           Column(
                             children: estrategias.map((estrategia) {
-                              return ListTile(
-                                title: Text(estrategia['nombre'] ?? '', style: TextStyle(fontFamily: 'Shogie', fontSize: 20)),
-                                subtitle: Text(
-                                    'Juego: ${estrategia['juegoNombre']}, Completado: ${convertirBoolAString(estrategia['completado'])}',
-                                    style: TextStyle(fontFamily: 'Shogie', fontSize: 20)
+                              return Column(
+                                children: [
+                                  SizedBox(height: 5), // SizedBox de altura 5
+                                  ListTile(
+                                    title: Text(
+                                      estrategia['nombre'] ?? '',
+                                      style: TextStyle(fontFamily: 'Shogie', fontSize: 20),
+                                    ),
+                                    subtitle: Text(
+                                      'Juego: ${estrategia['juegoNombre']}, Completado: ${convertirBoolAString(estrategia['completado'])}',
+                                      style: TextStyle(fontFamily: 'Shogie', fontSize: 20),
+                                    ),
+                                    tileColor: Colors.lightBlue[100], // Color celeste pastel
+                                    onTap: () async {
+                                      await Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => MostrarEstrategia(
+                                            rutinaId: estrategia['id'],
+                                            juegoId: estrategia['juegoId'],
+                                          ),
+                                        ),
+                                      );
+                                      setState(() {
+                                        _futureEstrategias = cargarEstrategiasDesdeJson();
+                                      });
+                                    },
+                                  ),
+                                ],
+                              );
+                            }).toList(),
+                          ),
+                        ],
+                      );
+                    } else {
+                      return Column(
+                        children: estrategias.map((estrategia) {
+                          return Column(
+                            children: [
+                              SizedBox(height: 5), // SizedBox de altura 5
+                              ListTile(
+                                title: Text(
+                                  estrategia['nombre'] ?? '',
+                                  style: TextStyle(fontFamily: 'Shogie', fontSize: 20),
                                 ),
+                                subtitle: Text(
+                                  'Juego: ${estrategia['juegoNombre']}, Completado: ${convertirBoolAString(estrategia['completado'])}',
+                                  style: TextStyle(fontFamily: 'Shogie', fontSize: 20),
+                                ),
+                                tileColor: Color.fromARGB(255, 162, 222, 250), // Color celeste pastel
                                 onTap: () async {
                                   await Navigator.push(
                                     context,
@@ -212,34 +262,8 @@ class _MenuState extends State<Menu> {
                                     _futureEstrategias = cargarEstrategiasDesdeJson();
                                   });
                                 },
-                              );
-                            }).toList(),
-                          ),
-                        ],
-                      );
-                    } else {
-                      return Column(
-                        children: estrategias.map((estrategia) {
-                          return ListTile(
-                            title: Text(estrategia['nombre'] ?? '', style: TextStyle(fontFamily: 'Shogie', fontSize: 20)),
-                            subtitle: Text(
-                                'Juego: ${estrategia['juegoNombre']}, Completado: ${convertirBoolAString(estrategia['completado'])}',
-                                style: TextStyle(fontFamily: 'Shogie', fontSize: 20)
-                            ),
-                            onTap: () async {
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => MostrarEstrategia(
-                                    rutinaId: estrategia['id'],
-                                    juegoId: estrategia['juegoId'],
-                                  ),
-                                ),
-                              );
-                              setState(() {
-                                _futureEstrategias = cargarEstrategiasDesdeJson();
-                              });
-                            },
+                              ),
+                            ],
                           );
                         }).toList(),
                       );
