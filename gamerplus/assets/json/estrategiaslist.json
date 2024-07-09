@@ -4,10 +4,10 @@
         "juegoId": 1,
         "juegoNombre": "Dark Souls: Remastered",
         "seleccionado": false,
-        "nombre": "strat 1 ds",
-        "dificultad": "facil",
+        "nombre": "Wrong Warp",
+        "dificultad": "Medio",
         "completado": false,
-        "descripcion": "lol",
+        "descripcion": "Necesitas el “Purple Cowards Crystal”, un consumable como los “Estus” y el “Dark Sign”. Descansa en la hoguera del horno de la primera llama, ve a la hoguera del santuario de Oolacile, ve hacia una cornisa y cae, intenta usar el cristal, inmediatamente cambia al estus y muévete instantáneamente, mientras caigas desequípate el arma derecha y apenas toques el suelo usa el Estus, luego cambia al Dark Sign y úsalo antes que el cristal haga efecto. Esto te permitirá atravesar la puerta del Horno de la Primera llama, esencialmente saltando la mitad del juego.",
         "imagen": "img"
     },
     {
@@ -15,10 +15,10 @@
         "juegoId": 1,
         "juegoNombre": "Dark Souls: Remastered",
         "seleccionado": false,
-        "nombre": "strat 2 ds",
-        "dificultad": "facil",
+        "nombre": "Tumble Buff",
+        "dificultad": "Medio",
         "completado": false,
-        "descripcion": "lol",
+        "descripcion": "Necesitas un hechizo que potencia un arma, un arma que no se pueda potenciar, el hechizo “Force” y un catalizador. Ve a una cornisa, intenta potenciar mientras no tengas nada equipado en la mano derecha, instantáneamente cae por la cornisa y cambia el hechizo a Force y equípate el arma que no se pueda potenciar mientras caes, apenas toques el suelo, castea Force y el arma debería potenciarse. Esto permite potenciar armas que no se pueden potenciar por que ya de base son muy fuertes, convirtiéndolas en armas que hacen una gran cantidad de daño.",
         "imagen": "img"
     },
     {
@@ -26,10 +26,10 @@
         "juegoId": 1,
         "juegoNombre": "Dark Souls: Remastered",
         "seleccionado": false,
-        "nombre": "strat 3 ds",
-        "dificultad": "facil",
+        "nombre": "Alabarda de Caballero Negro",
+        "dificultad": "Fácil",
         "completado": false,
-        "descripcion": "lol",
+        "descripcion": "Necesitas empezar con la clase “Ladrón” o con el regalo inicial “Llave Maestra”. Apenas llegues a Lordran, desciende a Nuevo londo, usa la llave maestra para entrar al Valle de los Dragones, e ir hasta el final de la zona. En el lado opuesto de la zona que da a Nuevo londo, hay un ascensor que te llevará a “Dark Root Garden”, aquí hay una hoguera y un caballero negro al borde de un precipicio, intenta botarlo con un backstab o parry, al morir existe una probabilidad de que te de su arma. La Alabarda de Caballero Negro es una de las armas mas poderosas a nivel 1 y es vital para completar un speedrun, sin embargo el que haya una probabilidad de obtenerla, no la hace muy confiable de obtener y te obligará a reiniciar la run, por eso recomendamos consumir 4 humanidades para aumentar las probabilidades de obtener esta arma",
         "imagen": "img"
     },
     {
@@ -37,10 +37,10 @@
         "juegoId": 2,
         "juegoNombre": "Dark Souls II: Scholar of the First Sin",
         "seleccionado": false,
-        "nombre": "strat 1 ds2",
-        "dificultad": "facil",
+        "nombre": "Party Walk",
+        "dificultad": "Difícil",
         "completado": false,
-        "descripcion": "lol",
+        "descripcion": "Para esto necesitas la “Falda de Mariposa Lunar” y un escudo que haga parry. Ve hacia la situación deseada y atrae a un enemigo humanoide que se pueda parrear, cuando te ataque y logres acertar el parry, muévete un poco hacia atrás y a la derecha, espera exactamente un segundo y corre en dirección hacia el enemigo y salta apenas lo toques. Esto te permitirá lockear tu posición en el eje “Y” y moverte libremente, básicamente volando por donde quieras y saltándote zonas enteras, sin embargo esto solo dura 30 segundos.",
         "imagen": "img"
     },
     {
@@ -48,10 +48,10 @@
         "juegoId": 2,
         "juegoNombre": "Dark Souls II: Scholar of the First Sin",
         "seleccionado": false,
-        "nombre": "strat 2 ds2",
-        "dificultad": "facil",
+        "nombre": "Yearn",
+        "dificultad": "Fácil",
         "completado": false,
-        "descripcion": "lol",
+        "descripcion": "Dark Souls II es un juego con zonas plagadas de enemigos que te pueden acertar golpes fácilmente, es por eso que se recomienda usar el hechizo “Yearn”, este requiere un báculo para castear, 19 de inteligencia y es vendida por Carhillion por 3000 almas. Recomendamos lanzar el hechizo a la pared los enemigos cercanos se verán atraídos por el proyectil, básicamente quitándoles la atención hacia ti.",
         "imagen": "img"
     },
     {
@@ -59,10 +59,10 @@
         "juegoId": 2,
         "juegoNombre": "Dark Souls II: Scholar of the First Sin",
         "seleccionado": false,
-        "nombre": "strat 3 ds2",
-        "dificultad": "facil",
+        "nombre": "Dragonrider Cheese",
+        "dificultad": "Fácil",
         "completado": false,
-        "descripcion": "lol",
+        "descripcion": "El jefe de la zona “Heides Tower of Flame”, el llamado “Dragonrider”, requiere que subas unas plataformas para combatir contra él, sin embargo, es más fácil no levantar las plataformas ya que existe una forma de que caiga al vacío. Apenas entres a la arena del jefe, quédate quieto y espera que este de 7 pasos hacia ti, en ese momento corre hacia su izquierda y salta sobre el vacío, caerás sobre la arena y el jefe intentará hacer un ataque estocada, sin embargo gracias a tu posición, el jefe se dará una vuelta y se caerá de la plataforma, muriendo al instante y dándote 15000 almas",
         "imagen": "img"
     },
     {
@@ -70,10 +70,10 @@
         "juegoId": 3,
         "juegoNombre": "Dark Souls III",
         "seleccionado": false,
-        "nombre": "strat 1 ds3",
-        "dificultad": "facil",
+        "nombre": "Quit-out",
+        "dificultad": "Fácil",
         "completado": false,
-        "descripcion": "lol",
+        "descripcion": "Al llegar a una puerta, seguramente estarás siendo perseguido por un montón de enemigos, de cualquier manera, querrás hacer esta estrategia. Cuando interactúes con la puerta, abre el menú y navega hasta salir del juego, esto conviene ya que el tiempo fuera de juego no se considera para el speedrun, aparte la posición de los enemigos se resetea, así que no te perseguirán mas",
         "imagen": "img"
     },
     {
@@ -81,10 +81,10 @@
         "juegoId": 3,
         "juegoNombre": "Dark Souls III",
         "seleccionado": false,
-        "nombre": "strat 2 ds3",
-        "dificultad": "facil",
+        "nombre": "Bandido",
+        "dificultad": "Fácil",
         "completado": false,
-        "descripcion": "lol",
+        "descripcion": "La mejor clase inicial es la del bandido, ya que empieza con bastante destreza y su arma es sumamente rápida y capaz de infligir sangrado, que recordemos que hace daño porcentual, aparte esta arma sigue siendo muy buena en late-game",
         "imagen": "img"
     },
     {
@@ -92,10 +92,10 @@
         "juegoId": 3,
         "juegoNombre": "Dark Souls III",
         "seleccionado": false,
-        "nombre": "strat 3 ds3",
-        "dificultad": "facil",
+        "nombre": "Tree-jump",
+        "dificultad": "Medio",
         "completado": false,
-        "descripcion": "lol",
+        "descripcion": "Subiendo por las escaleras del santuario del enlace, hay un objeto que se imposible de alcanzar, a su lado hay un árbol, este te servirá para subir a esta zona. Detrás de ti hay una puerta, posiciónate frente a ella y corre en dirección al árbol, al estar medio chueco, podrás subirte por un momento a él, y cuando alcances el punto máximo, salta en dirección a la derecha y podrás subir a esta zona, ahí hay un par de objetos valiosos como un fragmento de estus, huesos regresos y el anillo de serpiente plateada, el cual te da 20 porciento mas de almas.",
         "imagen": "img"
     },
     {
@@ -103,10 +103,10 @@
         "juegoId": 4,
         "juegoNombre": "Elden Ring",
         "seleccionado": false,
-        "nombre": "strat 1 er",
-        "dificultad": "facil",
+        "nombre": "ZIP",
+        "dificultad": "Difícil",
         "completado": false,
-        "descripcion": "lol",
+        "descripcion": "Para recorrer largas distancias, existe un truco que te permite moverte mapas enteros en segundos. Para esto, empuña un arma a 2 manos, mantén el botón de bloquear y exactamente cuenta 1 segundo y medio, apenas termine el tiempo, presiona una vez el botón para moverte hacia adelante una vez. Es frame perfect, pero una vez lo logres, podrás moverte una gran porción del mapa en nada",
         "imagen": "img"
     },
     {
@@ -114,10 +114,10 @@
         "juegoId": 4,
         "juegoNombre": "Elden Ring",
         "seleccionado": false,
-        "nombre": "strat 2 er",
-        "dificultad": "facil",
+        "nombre": "Wrong Warp",
+        "dificultad": "Medio",
         "completado": false,
-        "descripcion": "lol",
+        "descripcion": "Para esto necesitas una llave imbuida. En el campanario, toma el teletransporte hacia Farum Azula, luego abre el mapa y teletranspórtate hacia la mesa redonda, cuando la barra de carga llegue al punto final, cierra el juego con alt f4 y al volver a entrar, aparecerás al inicio de Farum Azula, saltándote mas de la mitad del juego.",
         "imagen": "img"
     },
     {
@@ -125,10 +125,10 @@
         "juegoId": 4,
         "juegoNombre": "Elden Ring",
         "seleccionado": false,
-        "nombre": "strat 3 er",
-        "dificultad": "facil",
+        "nombre": "Icering Hatchet",
+        "dificultad": "Fácil",
         "completado": false,
-        "descripcion": "lol",
+        "descripcion": "En Liurnia existe un arma con una ceniza de guerra que hace una gran cantidad de daño, es un hacha con escarcha que se encuentra al suroeste de Raya Lucaria, en unas ruinas dentro de un cofre.",
         "imagen": "img"
     }
 ]

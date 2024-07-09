@@ -76,7 +76,7 @@ class _MostrarEstrategiaState extends State<MostrarEstrategia> {
       }
     });
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Seleccionado: ${_estrategia?.seleccionado}')),
+      SnackBar(content: Text('Seleccionado: ${_estrategia?.seleccionado == true ? 'Sí' : 'No'}')),
     );
   }
 
@@ -106,13 +106,14 @@ class _MostrarEstrategiaState extends State<MostrarEstrategia> {
                     onPressed: _cambiarSeleccionado,
                     child: Text('Seleccionar rutina'),
                   ),
+                  Text('Seleccionado para entrenar: ${_estrategia!.seleccionado ? 'Sí' : 'No'}', style: TextStyle(fontSize: 20)),
+                  SizedBox(height: 8),
                   Text('Nombre: ${_estrategia!.nombre}', style: TextStyle(fontSize: 24)),
                   SizedBox(height: 8),
                   Text('Dificultad: ${_estrategia!.dificultad}', style: TextStyle(fontSize: 20)),
                   SizedBox(height: 8),
                   Text('Descripción: ${_estrategia!.descripcion}', style: TextStyle(fontSize: 20)),
                   SizedBox(height: 8),
-                  Text('Seleccionado: ${_estrategia!.seleccionado}', style: TextStyle(fontSize: 20)),
                 ],
               ),
             );
