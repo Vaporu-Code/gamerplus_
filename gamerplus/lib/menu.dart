@@ -46,7 +46,7 @@ class _MenuState extends State<Menu> {
       String jsonString = await file.readAsString();
       List<dynamic> estrategias = jsonDecode(jsonString);
 
-      // Filtrar las estrategias que tienen seleccionado = true
+      
       List<dynamic> estrategiasSeleccionadas = estrategias.where((estrategia) {
         return estrategia['seleccionado'] == true;
       }).toList();
@@ -69,6 +69,7 @@ class _MenuState extends State<Menu> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text("Menú principal", style: TextStyle(fontFamily: 'Shogie')),
       ),
+      
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -133,6 +134,8 @@ class _MenuState extends State<Menu> {
           ],
         ),
       ),
+
+
       body: SingleChildScrollView(
         child: Container(
           color: Color.fromRGBO(196, 216, 109, 0.507),
@@ -160,7 +163,7 @@ class _MenuState extends State<Menu> {
               ),
               SizedBox(height: 10),
 
-              // Widget para mostrar las estrategias seleccionadas
+              
               FutureBuilder<List<dynamic>>(
                 future: _futureEstrategias,
                 builder: (context, snapshot) {
@@ -196,11 +199,13 @@ class _MenuState extends State<Menu> {
                             textAlign: TextAlign.center,
                           ),
                           SizedBox(height: 20),
+
                           Column(
                             children: estrategias.map((estrategia) {
                               return Column(
                                 children: [
-                                  SizedBox(height: 5), // SizedBox de altura 5
+                                  SizedBox(height: 5),
+
                                   ListTile(
                                     title: Text(
                                       estrategia['nombre'] ?? '',
@@ -210,7 +215,7 @@ class _MenuState extends State<Menu> {
                                       'Juego: ${estrategia['juegoNombre']}, Completado: ${convertirBoolAString(estrategia['completado'])}',
                                       style: TextStyle(fontFamily: 'Shogie', fontSize: 20),
                                     ),
-                                    tileColor: Colors.lightBlue[100], // Color celeste pastel
+                                    tileColor: Colors.lightBlue[100], 
                                     onTap: () async {
                                       await Navigator.push(
                                         context,
@@ -226,6 +231,8 @@ class _MenuState extends State<Menu> {
                                       });
                                     },
                                   ),
+
+
                                 ],
                               );
                             }).toList(),
@@ -237,7 +244,9 @@ class _MenuState extends State<Menu> {
                         children: estrategias.map((estrategia) {
                           return Column(
                             children: [
-                              SizedBox(height: 5), // SizedBox de altura 5
+                              SizedBox(height: 5), 
+
+
                               ListTile(
                                 title: Text(
                                   estrategia['nombre'] ?? '',
@@ -247,7 +256,7 @@ class _MenuState extends State<Menu> {
                                   'Juego: ${estrategia['juegoNombre']}, Completado: ${convertirBoolAString(estrategia['completado'])}',
                                   style: TextStyle(fontFamily: 'Shogie', fontSize: 20),
                                 ),
-                                tileColor: Color.fromARGB(255, 162, 222, 250), // Color celeste pastel
+                                tileColor: Color.fromARGB(255, 162, 222, 250), 
                                 onTap: () async {
                                   await Navigator.push(
                                     context,
@@ -263,9 +272,12 @@ class _MenuState extends State<Menu> {
                                   });
                                 },
                               ),
+
+
                             ],
                           );
                         }).toList(),
+
                       );
                     }
                   }
@@ -275,6 +287,8 @@ class _MenuState extends State<Menu> {
           ),
         ),
       ),
+
+
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
@@ -284,6 +298,8 @@ class _MenuState extends State<Menu> {
         tooltip: 'Actualizar',
         child: Icon(Icons.refresh),
       ),
+
+
     );
   }
 }

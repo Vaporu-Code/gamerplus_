@@ -85,95 +85,99 @@ class _ListaEntrenamientoState extends State<ListaEntrenamiento> {
           style: TextStyle(fontFamily: 'Shogie'),
         ),
       ),
-      body: Center(
-        child: FutureBuilder<List<dynamic>>(
-          future: _futureEstrategiasSeleccionadas,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return CircularProgressIndicator();
-            } else if (snapshot.hasError) {
-              return Text(
-                'Error al cargar estrategias seleccionadas: ${snapshot.error}',
-                style: TextStyle(fontFamily: 'Shogie'),
-              );
-            } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-              return Text(
-                'No hay estrategias seleccionadas',
-                style: TextStyle(fontFamily: 'Shogie'),
-              );
-            } else {
-              List<dynamic> estrategiasSeleccionadas = snapshot.data!;
-              return SingleChildScrollView(
-                child: Column(
-                  children: [
-                    ListView.builder(
-                      shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
-                      itemCount: estrategiasSeleccionadas.length,
-                      itemBuilder: (context, index) {
-                        var estrategia = estrategiasSeleccionadas[index];
-                        return Column(
-                          children: [
-                            SizedBox(height: 5), // Añadir SizedBox antes de cada elemento
-                            Container(
-                              color: Colors.lightBlue[100], // Color celeste pastel
-                              child: ListTile(
-                                title: Text(
-                                  estrategia['nombre'],
-                                  style: TextStyle(fontSize: 18, fontFamily: 'Shogie'), // Aumentar tamaño del texto y aplicar la fuente
-                                ),
-                                subtitle: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Juego: ${estrategia['juegoNombre']}',
-                                      style: TextStyle(fontSize: 16, fontFamily: 'Shogie'), // Aumentar tamaño del texto y aplicar la fuente
-                                    ),
-                                    Text(
-                                      'Completado: ${estrategia['completado']}',
-                                      style: TextStyle(fontSize: 16, fontFamily: 'Shogie'), // Aumentar tamaño del texto y aplicar la fuente
-                                    ),
-                                  ],
-                                ),
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => MostrarEntrenamiento(
-                                        entrenamientoId: estrategia['id'],
-                                        juegoId: estrategia['juegoId'],
+      body: Container(
+        color: Color.fromRGBO(211, 230, 130, 0.788), 
+        child: Center(
+          child: FutureBuilder<List<dynamic>>(
+            future: _futureEstrategiasSeleccionadas,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return CircularProgressIndicator();
+              } else if (snapshot.hasError) {
+                return Text(
+                  'Error al cargar estrategias seleccionadas: ${snapshot.error}',
+                  style: TextStyle(fontFamily: 'Shogie'),
+                );
+              } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                return Text(
+                  'No hay estrategias seleccionadas',
+                  style: TextStyle(fontFamily: 'Shogie'),
+                );
+              } else {
+                List<dynamic> estrategiasSeleccionadas = snapshot.data!;
+                return SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      ListView.builder(
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                        itemCount: estrategiasSeleccionadas.length,
+                        itemBuilder: (context, index) {
+                          var estrategia = estrategiasSeleccionadas[index];
+                          return Column(
+                            children: [
+                              SizedBox(height: 5), 
+
+                              Container(
+                                color: Colors.lightBlue[100], 
+                                child: ListTile(
+                                  title: Text(
+                                    estrategia['nombre'],
+                                    style: TextStyle(fontSize: 18, fontFamily: 'Shogie'), 
+                                  ),
+                                  subtitle: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Juego: ${estrategia['juegoNombre']}',
+                                        style: TextStyle(fontSize: 16, fontFamily: 'Shogie'), 
                                       ),
-                                    ),
-                                  );
-                                },
+                                      Text(
+                                        'Completado: ${estrategia['completado']}',
+                                        style: TextStyle(fontSize: 16, fontFamily: 'Shogie'), 
+                                      ),
+                                    ],
+                                  ),
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => MostrarEntrenamiento(
+                                          entrenamientoId: estrategia['id'],
+                                          juegoId: estrategia['juegoId'],
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
                               ),
-                            ),
-                          ],
-                        );
-                      },
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        _actualizarCompletados(false);
-                      },
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color.fromARGB(255, 180, 81, 197), // Color morado pastel
+                            ],
+                          );
+                        },
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          _actualizarCompletados(false);
+                        },
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                            const Color.fromARGB(255, 180, 81, 197), 
+                          ),
+                          foregroundColor: MaterialStateProperty.all<Color>(
+                            Colors.white, 
+                          ),
                         ),
-                        foregroundColor: MaterialStateProperty.all<Color>(
-                          Colors.white, // Texto blanco
+                        child: Text(
+                          'Marcar todos como no completados',
+                          style: TextStyle(fontFamily: 'Shogie'),
                         ),
                       ),
-                      child: Text(
-                        'Marcar todos como no completados',
-                        style: TextStyle(fontFamily: 'Shogie'),
-                      ),
-                    ),
-                  ],
-                ),
-              );
-            }
-          },
+                    ],
+                  ),
+                );
+              }
+            },
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(

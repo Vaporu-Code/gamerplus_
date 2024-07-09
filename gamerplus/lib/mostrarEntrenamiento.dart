@@ -39,8 +39,8 @@ class _MostrarEntrenamientoState extends State<MostrarEntrenamiento> {
   Future<void> _copyAssetToLocal() async {
     final file = await _getLocalFile();
     if (!file.existsSync()) {
-      final data = await DefaultAssetBundle.of(context)
-          .loadString('assets/json/estrategiaslist.json');
+      final data =
+          await DefaultAssetBundle.of(context).loadString('assets/json/estrategiaslist.json');
       await file.writeAsString(data);
     }
   }
@@ -101,6 +101,9 @@ class _MostrarEntrenamientoState extends State<MostrarEntrenamiento> {
           style: TextStyle(fontFamily: 'Shogie'),
         ),
       ),
+
+
+      
       body: FutureBuilder<Estrategias?>(
         future: _futureEstrategia,
         builder: (context, snapshot) {
@@ -117,10 +120,14 @@ class _MostrarEntrenamientoState extends State<MostrarEntrenamiento> {
             );
           } else {
             _estrategia = snapshot.data!;
-            return SingleChildScrollView(
-              child: Container(
-                color: Color.fromRGBO(196, 216, 109, 0.507),
-                padding: const EdgeInsets.all(16.0),
+
+            return Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              color: Color.fromRGBO(196, 216, 109, 1), 
+
+              padding: const EdgeInsets.all(16.0),
+              child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -128,12 +135,13 @@ class _MostrarEntrenamientoState extends State<MostrarEntrenamiento> {
                       onPressed: _cambiarCompletado,
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color.fromARGB(255, 180, 81, 197), // Color morado pastel
+                          const Color.fromARGB(255, 180, 81, 197), 
                         ),
                         foregroundColor: MaterialStateProperty.all<Color>(
-                          Colors.white, // Texto blanco
+                          Colors.white, 
                         ),
                       ),
+
                       child: Text(
                         _estrategia!.completado
                             ? 'Marcar como Incompleto'
@@ -142,19 +150,20 @@ class _MostrarEntrenamientoState extends State<MostrarEntrenamiento> {
                       ),
                     ),
                     SizedBox(height: 16),
+
                     Text(
                       'Nombre: ${_estrategia!.nombre}',
-                      style: TextStyle(fontSize: 24, fontFamily: 'Shogie'), // Aumentar tamaño del texto y aplicar la fuente
+                      style: TextStyle(fontSize: 24, fontFamily: 'Shogie'), 
                     ),
                     SizedBox(height: 8),
                     Text(
                       'Dificultad: ${_estrategia!.dificultad}',
-                      style: TextStyle(fontSize: 20, fontFamily: 'Shogie'), // Aumentar tamaño del texto y aplicar la fuente
+                      style: TextStyle(fontSize: 20, fontFamily: 'Shogie'), 
                     ),
                     SizedBox(height: 8),
                     Text(
                       'Descripción: ${_estrategia!.descripcion}',
-                      style: TextStyle(fontSize: 20, fontFamily: 'Shogie'), // Aumentar tamaño del texto y aplicar la fuente
+                      style: TextStyle(fontSize: 20, fontFamily: 'Shogie'), 
                     ),
                   ],
                 ),

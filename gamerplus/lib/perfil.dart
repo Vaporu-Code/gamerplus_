@@ -16,51 +16,44 @@ class Perfil extends StatelessWidget {
           style: TextStyle(fontFamily: 'Shogie'),
         ),
       ),
-      body: Container(
-        color: Color.fromRGBO(196, 216, 109, 0.507), // Color de fondo inverso
-        child: Stack(
-          children: [
-            // Imagen del usuario
-            Positioned(
-              top: 10,
-              left: 10,
-              child: Container(
+      backgroundColor: Color.fromRGBO(196, 216, 109, 0.651),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              
+              Container(
                 height: 100,
                 width: 100,
                 child: SvgPicture.asset(pfpUser),
               ),
-            ),
 
-            Padding(
-              padding: const EdgeInsets.only(top: 120, left: 20), // Ajusta el padding según sea necesario
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Nombre de usuario
-                  Text(
-                    "Vaporuname",
-                    style: TextStyle(fontFamily: "Shogie", fontSize: 30),
-                  ),
-
-                  SizedBox(height: 10), // Espacio
-                  Text(
-                    "País: Chile (CL)\n",
-                    style: TextStyle(fontFamily: "Shogie", fontSize: 20),
-                  ),
-
-                  Text(
-                    "Sobre mí: \nHola, aquí un poco de mi información\n",
-                    style: TextStyle(fontFamily: "Shogie", fontSize: 20),
-                  ),
-
-                  Text(
-                    "Mis redes: @vaporuname\n",
-                    style: TextStyle(fontFamily: "Shogie", fontSize: 20),
-                  ),
-                ],
+              SizedBox(height: 20), 
+              
+              Text(
+                "Vaporuname",
+                style: TextStyle(fontFamily: "Shogie", fontSize: 30),
               ),
-            ),
-          ],
+
+              SizedBox(height: 10),
+              Text(
+                "País: Chile (CL)\n",
+                style: TextStyle(fontFamily: "Shogie", fontSize: 20),
+              ),
+
+              Text(
+                "Sobre mí: \nHola, aquí un poco de mi información\n",
+                style: TextStyle(fontFamily: "Shogie", fontSize: 20),
+              ),
+
+              Text(
+                "Mis redes: @vaporuname\n",
+                style: TextStyle(fontFamily: "Shogie", fontSize: 20),
+              ),
+            ],
+          ),
         ),
       ),
     );

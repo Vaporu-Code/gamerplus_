@@ -18,18 +18,18 @@ class infoapp extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Título
+            
             Text(
               'Gamerplus',
               style: TextStyle(fontFamily: 'Shogie', fontSize: 50),
             ),
             SizedBox(height: 10),
-            // Información de la app
+            
             Text(
               'La aplicación para fanáticos del speedrun\nEsta aplicación puedes almacenar tus puntajes, ver estrategias, monitorear tu mejora y mucho más',
               style: TextStyle(fontFamily: 'Shogie', fontSize: 20),
             ),
-            // Contacto
+            
             Text(
               '\nContáctate con nosotros: \ncontacto@correo.xd\n',
               style: TextStyle(fontFamily: 'Shogie', fontSize: 20),

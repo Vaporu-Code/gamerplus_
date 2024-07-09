@@ -45,7 +45,7 @@ class MostrarJuego extends StatelessWidget {
           } else {
             Juegos juego = snapshot.data!;
 
-            // Construir la lista de rutinas
+            
             List<Map<String, dynamic>> rutinas = [
               {'id': 1, 'nombre': 'Rutina 1'},
               {'id': 2, 'nombre': 'Rutina 2'},
@@ -54,19 +54,19 @@ class MostrarJuego extends StatelessWidget {
 
             return SingleChildScrollView(
               child: Container(
-                color: Color.fromRGBO(196, 216, 109, 0.507),
+                color: Color.fromRGBO(196, 216, 109, 1),
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Mostrar imagen del juego usando SvgPicture.asset
+                    
                     SvgPicture.asset(
                       juego.imagen,
-                      height: 200, // Altura de la imagen ajustable según necesidad
+                      height: 200, 
                     ),
                     SizedBox(height: 16),
 
-                    // Información del juego
+                    //Información del juego
                     Text('Nombre: ${juego.nombre}',
                         style: TextStyle(fontSize: 24, fontFamily: 'Shogie')),
                     SizedBox(height: 8),
@@ -89,7 +89,7 @@ class MostrarJuego extends StatelessWidget {
                         style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
                     SizedBox(height: 16),
 
-                    // Construir la lista de botones
+                    //lista
                     ListView.builder(
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),

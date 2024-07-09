@@ -11,11 +11,14 @@ class lista extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 120, 86, 100),
         title: Text("Lista de Juegos", style: TextStyle(fontFamily: 'Shogie')),
       ),
+
+
       body: Center(
         child: ListView(
           children: <Widget>[
             SizedBox(height: 5),
-            // Juego 1
+
+            //1
             InkWell(
               onTap: () {
                 Navigator.push(
@@ -28,7 +31,7 @@ class lista extends StatelessWidget {
               child: Container(
                 height: 100,
                 decoration: BoxDecoration(
-                  color: Colors.lightBlue[100], // Color celeste pastel
+                  color: Colors.lightBlue[100], 
                 ),
                 child: Center(
                   child: Text(
@@ -39,7 +42,7 @@ class lista extends StatelessWidget {
               ),
             ),
             SizedBox(height: 5),
-            // Juego 2
+            //2
             InkWell(
               onTap: () {
                 Navigator.push(
@@ -52,7 +55,7 @@ class lista extends StatelessWidget {
               child: Container(
                 height: 100,
                 decoration: BoxDecoration(
-                  color: Colors.lightBlue[100], // Color celeste pastel
+                  color: Colors.lightBlue[100], 
                 ),
                 child: Center(
                   child: Text(
@@ -65,7 +68,7 @@ class lista extends StatelessWidget {
             ),
             SizedBox(height: 5),
 
-            // Juego 3
+            //3
             InkWell(
               onTap: () {
                 Navigator.push(
@@ -78,7 +81,7 @@ class lista extends StatelessWidget {
               child: Container(
                 height: 100,
                 decoration: BoxDecoration(
-                  color: Colors.lightBlue[100], // Color celeste pastel
+                  color: Colors.lightBlue[100], 
                 ),
                 child: Center(
                   child: Text(
@@ -90,7 +93,7 @@ class lista extends StatelessWidget {
             ),
             SizedBox(height: 5),
 
-            // Juego 4
+            //4
             InkWell(
               onTap: () {
                 Navigator.push(
@@ -103,7 +106,7 @@ class lista extends StatelessWidget {
               child: Container(
                 height: 100,
                 decoration: BoxDecoration(
-                  color: Colors.lightBlue[100], // Color celeste pastel
+                  color: Colors.lightBlue[100], 
                 ),
                 child: Center(
                   child: Text(
