@@ -117,36 +117,39 @@ class _MostrarEntrenamientoState extends State<MostrarEntrenamiento> {
             );
           } else {
             _estrategia = snapshot.data!;
-            return Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ElevatedButton(
-                    onPressed: _cambiarCompletado,
-                    child: Text(
-                      _estrategia!.completado
-                          ? 'Marcar como Incompleto'
-                          : 'Marcar como Completado',
-                      style: TextStyle(fontFamily: 'Shogie'),
+            return Container(
+              color: Color.fromRGBO(196, 216, 109, 0.507),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ElevatedButton(
+                      onPressed: _cambiarCompletado,
+                      child: Text(
+                        _estrategia!.completado
+                            ? 'Marcar como Incompleto'
+                            : 'Marcar como Completado',
+                        style: TextStyle(fontFamily: 'Shogie'),
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 16),
-                  Text(
-                    'Nombre: ${_estrategia!.nombre}',
-                    style: TextStyle(fontSize: 24, fontFamily: 'Shogie'), // Aumentar tamaño del texto y aplicar la fuente
-                  ),
-                  SizedBox(height: 8),
-                  Text(
-                    'Dificultad: ${_estrategia!.dificultad}',
-                    style: TextStyle(fontSize: 20, fontFamily: 'Shogie'), // Aumentar tamaño del texto y aplicar la fuente
-                  ),
-                  SizedBox(height: 8),
-                  Text(
-                    'Descripción: ${_estrategia!.descripcion}',
-                    style: TextStyle(fontSize: 20, fontFamily: 'Shogie'), // Aumentar tamaño del texto y aplicar la fuente
-                  ),
-                ],
+                    SizedBox(height: 16),
+                    Text(
+                      'Nombre: ${_estrategia!.nombre}',
+                      style: TextStyle(fontSize: 24, fontFamily: 'Shogie'), // Aumentar tamaño del texto y aplicar la fuente
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      'Dificultad: ${_estrategia!.dificultad}',
+                      style: TextStyle(fontSize: 20, fontFamily: 'Shogie'), // Aumentar tamaño del texto y aplicar la fuente
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      'Descripción: ${_estrategia!.descripcion}',
+                      style: TextStyle(fontSize: 20, fontFamily: 'Shogie'), // Aumentar tamaño del texto y aplicar la fuente
+                    ),
+                  ],
+                ),
               ),
             );
           }

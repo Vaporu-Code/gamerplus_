@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gamerplus/mostrarJuego.dart';
 
 class lista extends StatelessWidget {
-  const lista({super.key});
+  const lista({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,7 @@ class lista extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             SizedBox(height: 5),
-            //juego 1
+            // Juego 1
             InkWell(
               onTap: () {
                 Navigator.push(
@@ -28,7 +27,9 @@ class lista extends StatelessWidget {
               },
               child: Container(
                 height: 100,
-                color: Color.fromARGB(148, 99, 136, 148),
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(196, 216, 109, 0.507),
+                ),
                 child: Center(
                   child: Text(
                     'Dark Souls: Remastered',
@@ -38,7 +39,7 @@ class lista extends StatelessWidget {
               ),
             ),
             SizedBox(height: 5),
-            //juego 2
+            // Juego 2
             InkWell(
               onTap: () {
                 Navigator.push(
@@ -50,7 +51,9 @@ class lista extends StatelessWidget {
               },
               child: Container(
                 height: 100,
-                color: Color.fromARGB(148, 99, 136, 148),
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(196, 216, 109, 0.507),
+                ),
                 child: Center(
                   child: Text(
                     'Dark Souls II: Scholar of the First Sin',
@@ -62,7 +65,7 @@ class lista extends StatelessWidget {
             ),
             SizedBox(height: 5),
 
-            //juego 3
+            // Juego 3
             InkWell(
               onTap: () {
                 Navigator.push(
@@ -74,7 +77,9 @@ class lista extends StatelessWidget {
               },
               child: Container(
                 height: 100,
-                color: Color.fromARGB(148, 99, 136, 148),
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(196, 216, 109, 0.507),
+                ),
                 child: Center(
                   child: Text(
                     'Dark Souls III',
@@ -85,7 +90,7 @@ class lista extends StatelessWidget {
             ),
             SizedBox(height: 5),
 
-            //juego 4
+            // Juego 4
             InkWell(
               onTap: () {
                 Navigator.push(
@@ -97,7 +102,9 @@ class lista extends StatelessWidget {
               },
               child: Container(
                 height: 100,
-                color: Color.fromARGB(148, 99, 136, 148),
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(196, 216, 109, 0.507),
+                ),
                 child: Center(
                   child: Text(
                     'Elden Ring',

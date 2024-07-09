@@ -98,24 +98,27 @@ class _MostrarEstrategiaState extends State<MostrarEstrategia> {
             return Center(child: Text('No se encontró información para la rutina ${widget.rutinaId} del juego ${widget.juegoId}', style: TextStyle(fontFamily: 'Shogie')));
           } else {
             _estrategia = snapshot.data!;
-            return Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ElevatedButton(
-                    onPressed: _cambiarSeleccionado,
-                    child: Text('Seleccionar rutina', style: TextStyle(fontFamily: 'Shogie')),
-                  ),
-                  Text('Seleccionado para entrenar: ${_estrategia!.seleccionado ? 'Sí' : 'No'}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
-                  SizedBox(height: 8),
-                  Text('Nombre: ${_estrategia!.nombre}', style: TextStyle(fontSize: 24, fontFamily: 'Shogie')),
-                  SizedBox(height: 8),
-                  Text('Dificultad: ${_estrategia!.dificultad}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
-                  SizedBox(height: 8),
-                  Text('Descripción: ${_estrategia!.descripcion}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
-                  SizedBox(height: 8),
-                ],
+            return Container(
+              color: Color.fromRGBO(196, 216, 109, 0.507),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ElevatedButton(
+                      onPressed: _cambiarSeleccionado,
+                      child: Text('Seleccionar rutina', style: TextStyle(fontFamily: 'Shogie')),
+                    ),
+                    Text('Seleccionado para entrenar: ${_estrategia!.seleccionado ? 'Sí' : 'No'}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
+                    SizedBox(height: 8),
+                    Text('Nombre: ${_estrategia!.nombre}', style: TextStyle(fontSize: 24, fontFamily: 'Shogie')),
+                    SizedBox(height: 8),
+                    Text('Dificultad: ${_estrategia!.dificultad}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
+                    SizedBox(height: 8),
+                    Text('Descripción: ${_estrategia!.descripcion}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
+                    SizedBox(height: 8),
+                  ],
+                ),
               ),
             );
           }

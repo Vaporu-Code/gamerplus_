@@ -47,59 +47,62 @@ class MostrarJuego extends StatelessWidget {
               {'id': 3, 'nombre': 'Rutina 3'},
             ];
 
-            return Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Mostrar imagen del juego usando SvgPicture.asset
-                  SvgPicture.asset(
-                    juego.imagen,
-                    height: 200, // Altura de la imagen ajustable según necesidad
-                  ),
-                  SizedBox(height: 16),
+            return Container(
+              color: Color.fromRGBO(196, 216, 109, 0.507),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Mostrar imagen del juego usando SvgPicture.asset
+                    SvgPicture.asset(
+                      juego.imagen,
+                      height: 200, // Altura de la imagen ajustable según necesidad
+                    ),
+                    SizedBox(height: 16),
 
-                  // Información del juego
-                  Text('Nombre: ${juego.nombre}', style: TextStyle(fontSize: 24, fontFamily: 'Shogie')),
-                  SizedBox(height: 8),
-                  Text('Año: ${juego.anno}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
-                  SizedBox(height: 8),
-                  Text('Género: ${juego.genero}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
-                  SizedBox(height: 8),
-                  Text('Descripción:', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
-                  SizedBox(height: 8),
-                  Text('${juego.descripcion}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
-                  SizedBox(height: 8),
-                  Text('Puntuación: ${juego.puntuacion}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
-                  SizedBox(height: 8),
-                  Text('World Record: ${juego.worldRecord}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
-                  SizedBox(height: 16),
+                    // Información del juego
+                    Text('Nombre: ${juego.nombre}', style: TextStyle(fontSize: 24, fontFamily: 'Shogie')),
+                    SizedBox(height: 8),
+                    Text('Año: ${juego.anno}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
+                    SizedBox(height: 8),
+                    Text('Género: ${juego.genero}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
+                    SizedBox(height: 8),
+                    Text('Descripción:', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
+                    SizedBox(height: 8),
+                    Text('${juego.descripcion}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
+                    SizedBox(height: 8),
+                    Text('Puntuación: ${juego.puntuacion}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
+                    SizedBox(height: 8),
+                    Text('World Record: ${juego.worldRecord}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
+                    SizedBox(height: 16),
 
-                  // Construir la lista de botones
-                  ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: rutinas.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.only(bottom: 8.0),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => MostrarEstrategia(
-                                  rutinaId: rutinas[index]['id'],
-                                  juegoId: id,
+                    // Construir la lista de botones
+                    ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: rutinas.length,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => MostrarEstrategia(
+                                    rutinaId: rutinas[index]['id'],
+                                    juegoId: id,
+                                  ),
                                 ),
-                              ),
-                            );
-                          },
-                          child: Text(rutinas[index]['nombre'], style: TextStyle(fontFamily: 'Shogie')),
-                        ),
-                      );
-                    },
-                  ),
-                ],
+                              );
+                            },
+                            child: Text(rutinas[index]['nombre'], style: TextStyle(fontFamily: 'Shogie')),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
               ),
             );
           }

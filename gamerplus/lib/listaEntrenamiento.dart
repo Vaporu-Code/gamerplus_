@@ -114,7 +114,7 @@ class _ListaEntrenamientoState extends State<ListaEntrenamiento> {
                           children: [
                             SizedBox(height: 5), // Añadir SizedBox antes de cada elemento
                             Container(
-                              color: Color.fromRGBO(99, 136, 148, 0.479),
+                              color: Color.fromRGBO(196, 216, 109, 0.507),
                               child: ListTile(
                                 title: Text(
                                   estrategia['nombre'],
