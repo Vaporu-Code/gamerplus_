@@ -6,7 +6,7 @@ import 'package:gamerplus/mostrarEstrategia.dart';
 class MostrarJuego extends StatelessWidget {
   final int id;
 
-  const MostrarJuego({super.key, required this.id});
+  const MostrarJuego({Key? key, required this.id}) : super(key: key);
 
   Future<Juegos?> cargarJuegoDesdeJson(BuildContext context) async {
     String jsonString = await DefaultAssetBundle.of(context).loadString('assets/json/juegoslist.json');
@@ -26,8 +26,6 @@ class MostrarJuego extends StatelessWidget {
       appBar: AppBar(
         title: Text('Detalles del Juego'),
       ),
-
-      
       body: FutureBuilder<Juegos?>(
         future: cargarJuegoDesdeJson(context),
         builder: (context, snapshot) {
@@ -39,6 +37,13 @@ class MostrarJuego extends StatelessWidget {
             return Center(child: Text('No se encontró información para el juego con id: $id'));
           } else {
             Juegos juego = snapshot.data!;
+
+            // Lista de rutinas
+            List<Map<String, dynamic>> rutinas = [
+              {'id': 1, 'nombre': 'Rutina 1'},
+              {'id': 2, 'nombre': 'Rutina 2'},
+              {'id': 3, 'nombre': 'Rutina 3'},
+            ];
 
             return Padding(
               padding: const EdgeInsets.all(16.0),
@@ -56,45 +61,30 @@ class MostrarJuego extends StatelessWidget {
                   Text('World Record: ${juego.worldRecord}', style: TextStyle(fontSize: 20)),
                   SizedBox(height: 16),
 
-                  //rutinas
-                  ElevatedButton(
-                    onPressed: (){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MostrarEstrategia(rutinaId: 1, juegoId: id)
+                  // Construir la lista de botones
+                  ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: rutinas.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MostrarEstrategia(
+                                  rutinaId: rutinas[index]['id'],
+                                  juegoId: id,
+                                ),
+                              ),
+                            );
+                          },
+                          child: Text(rutinas[index]['nombre']),
                         ),
                       );
                     },
-                    child: Text('rutina 1'),
                   ),
-
-                  SizedBox(height: 8),
-                  ElevatedButton(
-                    onPressed: (){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MostrarEstrategia(rutinaId: 2, juegoId: id)
-                        ),
-                      );
-                    },
-                    child: Text('rutina 1'),
-                  ),
-
-                  SizedBox(height: 8),
-                  ElevatedButton(
-                    onPressed: (){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MostrarEstrategia(rutinaId: 3, juegoId: id)
-                        ),
-                      );
-                    },
-                    child: Text('rutina 1'),
-                  ),
-
                 ],
               ),
             );

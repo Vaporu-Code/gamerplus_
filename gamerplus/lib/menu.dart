@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:gamerplus/listaEntrenamiento.dart';
 import 'package:gamerplus/mostrarEstrategia.dart';
@@ -34,7 +33,8 @@ class _MenuState extends State<Menu> {
   Future<void> _copyAssetToLocal() async {
     final file = await _getLocalFile();
     if (!file.existsSync()) {
-      final data = await DefaultAssetBundle.of(context).loadString('assets/json/estrategiaslist.json');
+      final data =
+          await DefaultAssetBundle.of(context).loadString('assets/json/estrategiaslist.json');
       await file.writeAsString(data);
     }
   }
@@ -56,6 +56,10 @@ class _MenuState extends State<Menu> {
       print('Error al cargar estrategias desde JSON: $e');
       return [];
     }
+  }
+
+  String convertirBoolAString(bool valor) {
+    return valor ? 'Sí' : 'No';
   }
 
   @override
@@ -161,45 +165,91 @@ class _MenuState extends State<Menu> {
                 } else if (snapshot.hasError) {
                   return Text('Error al cargar estrategias: ${snapshot.error}');
                 } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                  return Text('No hay estrategias disponibles');
+                  return Text(
+                      'No hay rutinas seleccionadas \n ve a la lista de juegos para revisar rutinas');
                 } else {
                   List<dynamic> estrategias = snapshot.data!;
-                  return Column(
-                    children: estrategias.map((estrategia) {
-                      return ListTile(
-                        title: Text(estrategia['nombre'] ?? ''),
-                        subtitle: Text('Juego: ${estrategia['juegoNombre']}, Completado: ${estrategia['completado']}'),
-                        onTap: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => MostrarEstrategia(
-                                rutinaId: estrategia['id'],
-                                juegoId: estrategia['juegoId'],
+                  bool todasCompletadas =
+                      estrategias.every((estrategia) => estrategia['completado'] == true);
+
+                  if (todasCompletadas) {
+                    return Column(
+                      children: [
+                        Text(
+                          'Has completado todas las rutinas, ve a entrenamiento si quieres resetarlas',
+                          style: TextStyle(
+                            fontFamily: 'Shogie',
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.red,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(height: 20),
+                        Column(
+                          children: estrategias.map((estrategia) {
+                            return ListTile(
+                              title: Text(estrategia['nombre'] ?? ''),
+                              subtitle: Text(
+                                  'Juego: ${estrategia['juegoNombre']}, Completado: ${convertirBoolAString(estrategia['completado'])}'),
+                              onTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => MostrarEstrategia(
+                                      rutinaId: estrategia['id'],
+                                      juegoId: estrategia['juegoId'],
+                                    ),
+                                  ),
+                                );
+                                setState(() {
+                                  _futureEstrategias = cargarEstrategiasDesdeJson();
+                                });
+                              },
+                            );
+                          }).toList(),
+                        ),
+                      ],
+                    );
+                  } else {
+                    return Column(
+                      children: estrategias.map((estrategia) {
+                        return ListTile(
+                          title: Text(estrategia['nombre'] ?? ''),
+                          subtitle: Text(
+                              'Juego: ${estrategia['juegoNombre']}, Completado: ${convertirBoolAString(estrategia['completado'])}'),
+                          onTap: () async {
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MostrarEstrategia(
+                                  rutinaId: estrategia['id'],
+                                  juegoId: estrategia['juegoId'],
+                                ),
                               ),
-                            ),
-                          );
-                          setState(() {
-                            _futureEstrategias = cargarEstrategiasDesdeJson();
-                          });
-                        },
-                      );
-                    }).toList(),
-                  );
+                            );
+                            setState(() {
+                              _futureEstrategias = cargarEstrategiasDesdeJson();
+                            });
+                          },
+                        );
+                      }).toList(),
+                    );
+                  }
                 }
               },
             ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _futureEstrategias = cargarEstrategiasDesdeJson();
-                });
-              },
-              child: Text('Actualizar'),
-            ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            _futureEstrategias = cargarEstrategiasDesdeJson();
+          });
+        },
+        tooltip: 'Actualizar',
+        child: Icon(Icons.refresh),
       ),
     );
   }
