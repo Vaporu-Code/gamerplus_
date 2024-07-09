@@ -10,7 +10,7 @@ class infoapp extends StatelessWidget{
         
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         
-        title: Text("Info de la App"),
+        title: Text("Info de la App", style: TextStyle(fontFamily: 'Shogie')),
       ),
 
       body: Padding(

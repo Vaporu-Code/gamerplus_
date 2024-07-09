@@ -84,7 +84,8 @@ class _MostrarEstrategiaState extends State<MostrarEstrategia> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Rutina ${widget.rutinaId} para Juego ${widget.juegoId}'),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        title: Text("Rutina", style: TextStyle(fontFamily: 'Shogie')),
       ),
       body: FutureBuilder<Estrategias?>(
         future: _futureEstrategia,
@@ -92,9 +93,9 @@ class _MostrarEstrategiaState extends State<MostrarEstrategia> {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
+            return Center(child: Text('Error: ${snapshot.error}', style: TextStyle(fontFamily: 'Shogie')));
           } else if (!snapshot.hasData || snapshot.data == null) {
-            return Center(child: Text('No se encontró información para la rutina ${widget.rutinaId} del juego ${widget.juegoId}'));
+            return Center(child: Text('No se encontró información para la rutina ${widget.rutinaId} del juego ${widget.juegoId}', style: TextStyle(fontFamily: 'Shogie')));
           } else {
             _estrategia = snapshot.data!;
             return Padding(
@@ -104,15 +105,15 @@ class _MostrarEstrategiaState extends State<MostrarEstrategia> {
                 children: [
                   ElevatedButton(
                     onPressed: _cambiarSeleccionado,
-                    child: Text('Seleccionar rutina'),
+                    child: Text('Seleccionar rutina', style: TextStyle(fontFamily: 'Shogie')),
                   ),
-                  Text('Seleccionado para entrenar: ${_estrategia!.seleccionado ? 'Sí' : 'No'}', style: TextStyle(fontSize: 20)),
+                  Text('Seleccionado para entrenar: ${_estrategia!.seleccionado ? 'Sí' : 'No'}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
                   SizedBox(height: 8),
-                  Text('Nombre: ${_estrategia!.nombre}', style: TextStyle(fontSize: 24)),
+                  Text('Nombre: ${_estrategia!.nombre}', style: TextStyle(fontSize: 24, fontFamily: 'Shogie')),
                   SizedBox(height: 8),
-                  Text('Dificultad: ${_estrategia!.dificultad}', style: TextStyle(fontSize: 20)),
+                  Text('Dificultad: ${_estrategia!.dificultad}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
                   SizedBox(height: 8),
-                  Text('Descripción: ${_estrategia!.descripcion}', style: TextStyle(fontSize: 20)),
+                  Text('Descripción: ${_estrategia!.descripcion}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
                   SizedBox(height: 8),
                 ],
               ),

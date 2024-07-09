@@ -67,7 +67,7 @@ class _MenuState extends State<Menu> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text("Menú principal"),
+        title: Text("Menú principal", style: TextStyle(fontFamily: 'Shogie')),
       ),
       drawer: Drawer(
         child: ListView(
@@ -139,19 +139,19 @@ class _MenuState extends State<Menu> {
           children: [
             Text(
               'Gamerplus, la aplicación para speedrunners',
-              style: TextStyle(fontFamily: 'Shogie', fontSize: 25),
+              style: TextStyle(fontFamily: 'Shogie', fontSize: 30),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 10),
             Text(
               'Recomendamos usar LiveSplit para medir tus tiempos',
-              style: TextStyle(fontFamily: 'Shogie', fontSize: 20),
+              style: TextStyle(fontFamily: 'Shogie', fontSize: 25),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 15),
             Text(
               'Rutinas por completar:',
-              style: TextStyle(fontFamily: 'Shogie', fontSize: 20),
+              style: TextStyle(fontFamily: 'Shogie', fontSize: 25),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 10),
@@ -163,10 +163,12 @@ class _MenuState extends State<Menu> {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return CircularProgressIndicator();
                 } else if (snapshot.hasError) {
-                  return Text('Error al cargar estrategias: ${snapshot.error}');
+                  return Text('Error al cargar estrategias: ${snapshot.error}', style: TextStyle(fontFamily: 'Shogie', fontSize: 20));
                 } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
                   return Text(
-                      'No hay rutinas seleccionadas \n ve a la lista de juegos para revisar rutinas');
+                      'No hay rutinas seleccionadas \n ve a la lista de juegos para revisar rutinas',
+                      style: TextStyle(fontFamily: 'Shogie', fontSize: 20)
+                  );
                 } else {
                   List<dynamic> estrategias = snapshot.data!;
                   bool todasCompletadas =
@@ -179,7 +181,7 @@ class _MenuState extends State<Menu> {
                           'Has completado todas las rutinas, ve a entrenamiento si quieres resetarlas',
                           style: TextStyle(
                             fontFamily: 'Shogie',
-                            fontSize: 18,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: Colors.red,
                           ),
@@ -189,9 +191,11 @@ class _MenuState extends State<Menu> {
                         Column(
                           children: estrategias.map((estrategia) {
                             return ListTile(
-                              title: Text(estrategia['nombre'] ?? ''),
+                              title: Text(estrategia['nombre'] ?? '', style: TextStyle(fontFamily: 'Shogie', fontSize: 20)),
                               subtitle: Text(
-                                  'Juego: ${estrategia['juegoNombre']}, Completado: ${convertirBoolAString(estrategia['completado'])}'),
+                                  'Juego: ${estrategia['juegoNombre']}, Completado: ${convertirBoolAString(estrategia['completado'])}',
+                                  style: TextStyle(fontFamily: 'Shogie', fontSize: 20)
+                              ),
                               onTap: () async {
                                 await Navigator.push(
                                   context,
@@ -215,9 +219,11 @@ class _MenuState extends State<Menu> {
                     return Column(
                       children: estrategias.map((estrategia) {
                         return ListTile(
-                          title: Text(estrategia['nombre'] ?? ''),
+                          title: Text(estrategia['nombre'] ?? '', style: TextStyle(fontFamily: 'Shogie', fontSize: 20)),
                           subtitle: Text(
-                              'Juego: ${estrategia['juegoNombre']}, Completado: ${convertirBoolAString(estrategia['completado'])}'),
+                              'Juego: ${estrategia['juegoNombre']}, Completado: ${convertirBoolAString(estrategia['completado'])}',
+                              style: TextStyle(fontFamily: 'Shogie', fontSize: 20)
+                          ),
                           onTap: () async {
                             await Navigator.push(
                               context,

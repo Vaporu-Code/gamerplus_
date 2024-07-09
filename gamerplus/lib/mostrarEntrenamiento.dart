@@ -95,8 +95,10 @@ class _MostrarEntrenamientoState extends State<MostrarEntrenamiento> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
-          'Entrenamiento ${widget.entrenamientoId} para Juego ${widget.juegoId}',
+          "Rutina",
+          style: TextStyle(fontFamily: 'Shogie'),
         ),
       ),
       body: FutureBuilder<Estrategias?>(
@@ -110,6 +112,7 @@ class _MostrarEntrenamientoState extends State<MostrarEntrenamiento> {
             return Center(
               child: Text(
                 'No se encontró información para el entrenamiento ${widget.entrenamientoId} del juego ${widget.juegoId}',
+                style: TextStyle(fontFamily: 'Shogie'),
               ),
             );
           } else {
@@ -125,22 +128,23 @@ class _MostrarEntrenamientoState extends State<MostrarEntrenamiento> {
                       _estrategia!.completado
                           ? 'Marcar como Incompleto'
                           : 'Marcar como Completado',
+                      style: TextStyle(fontFamily: 'Shogie'),
                     ),
                   ),
                   SizedBox(height: 16),
                   Text(
                     'Nombre: ${_estrategia!.nombre}',
-                    style: TextStyle(fontSize: 24),
+                    style: TextStyle(fontSize: 24, fontFamily: 'Shogie'), // Aumentar tamaño del texto y aplicar la fuente
                   ),
                   SizedBox(height: 8),
                   Text(
                     'Dificultad: ${_estrategia!.dificultad}',
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 20, fontFamily: 'Shogie'), // Aumentar tamaño del texto y aplicar la fuente
                   ),
                   SizedBox(height: 8),
                   Text(
                     'Descripción: ${_estrategia!.descripcion}',
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 20, fontFamily: 'Shogie'), // Aumentar tamaño del texto y aplicar la fuente
                   ),
                 ],
               ),

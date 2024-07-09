@@ -80,7 +80,10 @@ class _ListaEntrenamientoState extends State<ListaEntrenamiento> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text("Lista de Estrategias Seleccionadas"),
+        title: Text(
+          "Lista de Rutinas Seleccionadas",
+          style: TextStyle(fontFamily: 'Shogie'),
+        ),
       ),
       body: Center(
         child: FutureBuilder<List<dynamic>>(
@@ -90,11 +93,15 @@ class _ListaEntrenamientoState extends State<ListaEntrenamiento> {
               return CircularProgressIndicator();
             } else if (snapshot.hasError) {
               return Text(
-                  'Error al cargar estrategias seleccionadas: ${snapshot.error}');
+                'Error al cargar estrategias seleccionadas: ${snapshot.error}',
+                style: TextStyle(fontFamily: 'Shogie'),
+              );
             } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-              return Text('No hay estrategias seleccionadas');
+              return Text(
+                'No hay estrategias seleccionadas',
+                style: TextStyle(fontFamily: 'Shogie'),
+              );
             } else {
-              // Aquí puedes procesar y mostrar las estrategias seleccionadas
               List<dynamic> estrategiasSeleccionadas = snapshot.data!;
               return Column(
                 children: [
@@ -103,26 +110,43 @@ class _ListaEntrenamientoState extends State<ListaEntrenamiento> {
                       itemCount: estrategiasSeleccionadas.length,
                       itemBuilder: (context, index) {
                         var estrategia = estrategiasSeleccionadas[index];
-                        return ListTile(
-                          title: Text(estrategia['nombre']),
-                          subtitle: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Juego: ${estrategia['juegoNombre']}'),
-                              Text('Completado: ${estrategia['completado']}'),
-                            ],
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => MostrarEntrenamiento(
-                                  entrenamientoId: estrategia['id'],
-                                  juegoId: estrategia['juegoId'],
+                        return Column(
+                          children: [
+                            SizedBox(height: 5), // Añadir SizedBox antes de cada elemento
+                            Container(
+                              color: Color.fromRGBO(99, 136, 148, 0.479),
+                              child: ListTile(
+                                title: Text(
+                                  estrategia['nombre'],
+                                  style: TextStyle(fontSize: 18, fontFamily: 'Shogie'), // Aumentar tamaño del texto y aplicar la fuente
                                 ),
+                                subtitle: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Juego: ${estrategia['juegoNombre']}',
+                                      style: TextStyle(fontSize: 16, fontFamily: 'Shogie'), // Aumentar tamaño del texto y aplicar la fuente
+                                    ),
+                                    Text(
+                                      'Completado: ${estrategia['completado']}',
+                                      style: TextStyle(fontSize: 16, fontFamily: 'Shogie'), // Aumentar tamaño del texto y aplicar la fuente
+                                    ),
+                                  ],
+                                ),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => MostrarEntrenamiento(
+                                        entrenamientoId: estrategia['id'],
+                                        juegoId: estrategia['juegoId'],
+                                      ),
+                                    ),
+                                  );
+                                },
                               ),
-                            );
-                          },
+                            ),
+                          ],
                         );
                       },
                     ),
@@ -131,7 +155,10 @@ class _ListaEntrenamientoState extends State<ListaEntrenamiento> {
                     onPressed: () {
                       _actualizarCompletados(false);
                     },
-                    child: Text('Marcar todos como no completados'),
+                    child: Text(
+                      'Marcar todos como no completados',
+                      style: TextStyle(fontFamily: 'Shogie'),
+                    ),
                   ),
                 ],
               );

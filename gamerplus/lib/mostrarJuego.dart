@@ -1,7 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart'; // Importa flutter_svg
 import 'package:gamerplus/juegoClase.dart';
-import 'package:gamerplus/mostrarEstrategia.dart'; 
+import 'package:gamerplus/mostrarEstrategia.dart';
 
 class MostrarJuego extends StatelessWidget {
   final int id;
@@ -24,7 +25,8 @@ class MostrarJuego extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detalles del Juego'),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        title: Text("Juego", style: TextStyle(fontFamily: 'Shogie')),
       ),
       body: FutureBuilder<Juegos?>(
         future: cargarJuegoDesdeJson(context),
@@ -32,13 +34,13 @@ class MostrarJuego extends StatelessWidget {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
+            return Center(child: Text('Error: ${snapshot.error}', style: TextStyle(fontFamily: 'Shogie')));
           } else if (!snapshot.hasData || snapshot.data == null) {
-            return Center(child: Text('No se encontró información para el juego con id: $id'));
+            return Center(child: Text('No se encontró información para el juego con id: $id', style: TextStyle(fontFamily: 'Shogie')));
           } else {
             Juegos juego = snapshot.data!;
 
-            // Lista de rutinas
+            // Construir la lista de rutinas
             List<Map<String, dynamic>> rutinas = [
               {'id': 1, 'nombre': 'Rutina 1'},
               {'id': 2, 'nombre': 'Rutina 2'},
@@ -50,15 +52,27 @@ class MostrarJuego extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Nombre: ${juego.nombre}', style: TextStyle(fontSize: 24)),
+                  // Mostrar imagen del juego usando SvgPicture.asset
+                  SvgPicture.asset(
+                    juego.imagen,
+                    height: 200, // Altura de la imagen ajustable según necesidad
+                  ),
+                  SizedBox(height: 16),
+
+                  // Información del juego
+                  Text('Nombre: ${juego.nombre}', style: TextStyle(fontSize: 24, fontFamily: 'Shogie')),
                   SizedBox(height: 8),
-                  Text('Año: ${juego.anno}', style: TextStyle(fontSize: 20)),
+                  Text('Año: ${juego.anno}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
                   SizedBox(height: 8),
-                  Text('Género: ${juego.genero}', style: TextStyle(fontSize: 20)),
+                  Text('Género: ${juego.genero}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
                   SizedBox(height: 8),
-                  Text('Puntuación: ${juego.puntuacion}', style: TextStyle(fontSize: 20)),
+                  Text('Descripción:', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
                   SizedBox(height: 8),
-                  Text('World Record: ${juego.worldRecord}', style: TextStyle(fontSize: 20)),
+                  Text('${juego.descripcion}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
+                  SizedBox(height: 8),
+                  Text('Puntuación: ${juego.puntuacion}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
+                  SizedBox(height: 8),
+                  Text('World Record: ${juego.worldRecord}', style: TextStyle(fontSize: 20, fontFamily: 'Shogie')),
                   SizedBox(height: 16),
 
                   // Construir la lista de botones
@@ -80,7 +94,7 @@ class MostrarJuego extends StatelessWidget {
                               ),
                             );
                           },
-                          child: Text(rutinas[index]['nombre']),
+                          child: Text(rutinas[index]['nombre'], style: TextStyle(fontFamily: 'Shogie')),
                         ),
                       );
                     },
@@ -88,7 +102,6 @@ class MostrarJuego extends StatelessWidget {
                 ],
               ),
             );
-
           }
         },
       ),
