@@ -67,6 +67,8 @@ flutter:
     - assets/dsr.svg
     - assets/er.svg
     - assets/ds3.svg
+    - assets/logo.svg
+    - assets/fondo.svg
 
     - assets/json/juegoslist.json
     - assets/json/estrategiaslist.json
