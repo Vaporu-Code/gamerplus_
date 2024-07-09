@@ -37,4 +37,9 @@ class Estrategias {
       imagen: json['imagen'],
     );
   }
+
+  void cambiarSeleccionado(){
+    seleccionado =!seleccionado;
+  }
+
 }
