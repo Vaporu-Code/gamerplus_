@@ -42,4 +42,8 @@ class Estrategias {
   void cambiarSeleccionado() {
     seleccionado = !seleccionado;
   }
+
+  void cambiarCompletado(){
+    completado = !completado;
+  }
 }

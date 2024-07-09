@@ -4,11 +4,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
-
+import 'package:gamerplus/listaEntrenamiento.dart';
+import 'package:gamerplus/mostrarEstrategia.dart';
 import 'infoapp.dart';
 import 'lista.dart';
 import 'perfil.dart';
-import 'mostrarEstrategia.dart';
 
 class Menu extends StatefulWidget {
   const Menu({Key? key}) : super(key: key);
@@ -21,8 +21,8 @@ class _MenuState extends State<Menu> {
   late Future<List<dynamic>> _futureEstrategias;
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
+  void initState() {
+    super.initState();
     _futureEstrategias = cargarEstrategiasDesdeJson();
   }
 
@@ -39,7 +39,6 @@ class _MenuState extends State<Menu> {
     }
   }
 
-  // Función para cargar y procesar estrategias desde el archivo JSON
   Future<List<dynamic>> cargarEstrategiasDesdeJson() async {
     try {
       await _copyAssetToLocal();
@@ -105,6 +104,18 @@ class _MenuState extends State<Menu> {
             ),
             ListTile(
               title: const Text(
+                'Entrenamiento',
+                style: TextStyle(fontFamily: "Shogie", fontSize: 25),
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ListaEntrenamiento()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text(
                 'Info',
                 style: TextStyle(fontFamily: "Shogie", fontSize: 25),
               ),
@@ -141,7 +152,7 @@ class _MenuState extends State<Menu> {
             ),
             SizedBox(height: 10),
 
-            // Widget para mostrar las rutinas completadas
+            // Widget para mostrar las estrategias seleccionadas
             FutureBuilder<List<dynamic>>(
               future: _futureEstrategias,
               builder: (context, snapshot) {
@@ -156,10 +167,9 @@ class _MenuState extends State<Menu> {
                   return Column(
                     children: estrategias.map((estrategia) {
                       return ListTile(
-                        title: Text(estrategia['nombre']),
-                        subtitle: Text(estrategia['descripcion']),
+                        title: Text(estrategia['nombre'] ?? ''),
+                        subtitle: Text('Juego: ${estrategia['juegoNombre']}, Completado: ${estrategia['completado']}'),
                         onTap: () async {
-                          // Define la acción al seleccionar una estrategia
                           await Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -169,6 +179,9 @@ class _MenuState extends State<Menu> {
                               ),
                             ),
                           );
+                          setState(() {
+                            _futureEstrategias = cargarEstrategiasDesdeJson();
+                          });
                         },
                       );
                     }).toList(),
