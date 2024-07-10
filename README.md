@@ -1,7 +1,7 @@
 GAMERPLUS
 
 Juan Pablo Acevedo - 20942820-2
-Proyecto numero 1
+Proyecto numero 2
 Programación para Dispositivos Móviles
 Ingeniería en Desarrollo de Videojuegos y Realidad Virtual
 
@@ -18,6 +18,6 @@ Requerimientos no funcionales:
 -la aplicación funciona correctamente y no tiene errores o bugs que no permitan su correcto uso
 -la aplicación se ejecuta correctamente en un teléfono celular
 
-Link de video explicativo en Youtube:
+Link del nuevo video explicativo en Youtube:
 (copie y pegue el siguiente link en su navegador)
-https://www.youtube.com/watch?v=gIoe9ZDalJo
+https://www.youtube.com/watch?v=SHg5FNdWc_Y
